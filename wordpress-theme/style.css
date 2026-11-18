@@ -1,0 +1,43 @@
+/*
+Theme Name: dubai realestate
+Theme URI: https://zetasoft.org
+Author: Azeem Ushan
+Author URI: https://linkedin.com/in/azeemushan
+Description: A clean, elegant light-blue theme for Dubai real estate brokerages. Includes a full editorial home page, 36 community guides and WhatsApp enquiry flows. Brand, opening section, navigation, footer, contact details, social links and colours are editable in WordPress. Includes one-click demo content setup.
+Version: 3.0.1
+Requires at least: 5.8
+Tested up to: 6.6
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: dubai-real-estate
+Tags: one-column, custom-logo, custom-colors, theme-options, business
+*/
+
+/* Styles for standard WordPress pages (blog posts, pages). The home page and community guides carry their own styles. */
+body.dre-basic{margin:0;font-family:Manrope,system-ui,sans-serif;color:#2A4560;background:#F0F7FD;line-height:1.7}
+.dre-basic a{color:#1F5F96}
+.dre-basic header,.dre-basic main,.dre-basic footer{max-width:820px;margin:0 auto;padding:24px}
+.dre-basic header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #D8E6F2}
+.dre-basic header a.brand{font-family:"Bodoni Moda",serif;font-size:1.5rem;color:#0E2B47;text-decoration:none}
+.dre-basic header img{max-height:44px;width:auto}
+.dre-basic h1,.dre-basic h2,.dre-basic h3{font-family:"Bodoni Moda",serif;font-weight:400;color:#0E2B47;line-height:1.15}
+.dre-basic article{background:#fff;border:1px solid #D8E6F2;border-radius:6px;padding:32px;margin:24px 0}
+.dre-basic footer{font-size:.875rem;color:#4F6780}
+.dre-basic img{max-width:100%;height:auto}
+
+.dre-basic header,.dre-basic main,.dre-basic footer{max-width:1080px}
+.dre-basic header{flex-wrap:wrap;gap:16px}
+.dre-basic nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px 20px;margin:0;padding:0}
+.dre-basic nav a{color:#0E2B47;text-decoration:none;font-weight:600;font-size:.95rem}
+.dre-basic header .call{font-weight:700}
+.dre-basic footer nav{margin-bottom:12px}
+.dre-basic .dre-cover{width:100%;aspect-ratio:16/7;object-fit:cover;border-radius:6px;margin:8px 0 20px}
+.dre-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.dre-card{display:block;background:#F4F9FE;border:1px solid #D8E6F2;border-radius:6px;overflow:hidden;text-decoration:none}
+.dre-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.dre-card span{display:block;padding:10px 12px;color:#0E2B47;font-weight:600}
+
+:root{--paper:#FFFFFF;--stone:#F0F7FD;--ink:#0E2B47;--muted:#4F6780;--hx-blue:#1D5C99;--sans:Manrope,system-ui,sans-serif}
+
+.dre-basic .footer-disclaimer{font-size:13px;margin-top:16px}

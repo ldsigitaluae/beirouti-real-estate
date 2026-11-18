@@ -1,0 +1,36 @@
+# Roadmap
+
+- [x] Inspect uploaded Solara Bay archive safely
+- [x] Import static preview without repository history or caches
+- [x] Verify home page and community pages on desktop and mobile
+- [x] Refine approved preview with locked light-blue style, typography, icons, and imagery
+- [x] Convert the refined preview into an installable WordPress theme
+- [x] Build customizable "Dubai Real Estate" theme, ZIP and GitHub upload
+- [x] Refocus the opening message on trust and company branding
+- [x] Simplify visible copy and remove em dashes
+- [x] Make header, opening section, and footer fully editable in WordPress
+- [x] Add a lightweight demo import for pages, content, and images
+- [x] Rebuild, validate, and deliver the WordPress theme ZIP
+- [x] Remove opening image label and duplicate text developer names
+- [x] Convert official developer logos into a responsive marquee
+- [x] Update all phone and WhatsApp links to +971 56 181 5038
+- [x] Rebuild, verify, upload to GitHub, and deliver the new ZIP
+- [x] Confirm trust-led opening wording in the current preview
+- [x] Remove the ORN placeholder from the opening licence line
+- [x] Synchronize and deliver the corrected WordPress theme
+- [x] Set theme name, author profile, website, and version 2.0.1
+- [x] Use the supplied screenshot as the WordPress theme thumbnail
+- [x] Validate, upload, and deliver Dubai Realestate 2.0.1
+- [ ] Publish publicly (deferred by user)
+- [x] Remove excess mobile space before the quote.
+- [x] Keep the mobile process line behind and between numbered circles.
+- [x] Rebuild the dubai realestate 2.0.1 ZIP.
+- [x] Restore the original uploaded Solara Bay design and all 36 community pages
+- [x] Replace the opening right-side information box with a Dubai real estate photograph
+- [x] Add distinct relevant imagery for every community that lacks its own image
+- [x] Sync, validate, package, and deliver dubai realestate 2.0.3
+- [x] Apply and verify every October CSV row on the website
+- [x] Synchronize WordPress controls and demo content, bump to 2.0.4
+- [x] Validate and deliver updated theme ZIP
+- [x] Apply October 7 process, fees, FAQ, contact and footer revisions to preview and theme
+- [x] Validate and deliver dubai realestate 3.0.1 ZIP

@@ -1,0 +1,9 @@
+{
+  "capabilities": [
+    {"capability":"Static website code","source":"Uploaded code archive","outcome":"Imported into Lovable preview","status":"migrated","next_action":"Verify preview"},
+    {"capability":"36 community guide pages","source":"Generated static HTML","outcome":"Preserved under preview paths","status":"migrated","next_action":"Verify representative pages"},
+    {"capability":"WhatsApp enquiry flow","source":"Client-side JavaScript","outcome":"Preserved with supplied placeholder number","status":"pending_business_details","next_action":"Replace placeholder before publishing"},
+    {"capability":"Database and users","source":"None detected","outcome":"Not applicable","status":"not_applicable","next_action":"None"},
+    {"capability":"WordPress theme","source":"Future requirement","outcome":"Deferred until preview approval","status":"deferred","next_action":"Package after approval"}
+  ]
+}

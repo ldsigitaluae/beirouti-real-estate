@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Solara Bay Real Estate | Licensed Dubai Property Brokers</title>
+<meta name="description" content="Thoughtful Dubai property advice with clear facts, honest guidance and support at every step.">
+<meta property="og:title" content="Solara Bay Real Estate | Licensed Dubai Property Brokers">
+<meta property="og:description" content="Dubai property, thoughtfully advised.">
+<meta property="og:url" content="https://solarabay.ae">
+<meta name="theme-color" content="#EAF4FC">
+<link rel="canonical" href="https://solarabay.ae/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Solara Bay Real Estate">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23EAF4FC'/%3E%3Ccircle cx='20' cy='22' r='9' fill='%238EC5F0'/%3E%3Crect x='4' y='24' width='32' height='2.4' rx='1.2' fill='%230E2B47'/%3E%3Crect x='8' y='29' width='24' height='2' rx='1' fill='%23A9D0F0'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Solara Bay Real Estate","url":"https://solarabay.ae","telephone":"+971561815038","email":"info@solarabay.ae","areaServed":{"@type":"City","name":"Dubai"},"address":{"@type":"PostalAddress","addressLocality":"Dubai","addressCountry":"AE"},"openingHours":"Mo-Sa 09:00-19:00"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Marcellus&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!--
+  SOLARA BAY  -  website v2 (design system + interaction layer)
+  BEFORE LAUNCH, replace every [placeholder]:
+  1. CONFIG.whatsapp in the script at the bottom (digits only, e.g. 971501234567)
+  2. Phone, email, office address, DED licence, ORN
+  3. Team experience figure, property management fee
+  4. Testimonials: real client words only, with permission
+  5. Photos: upload to an /images/ folder next to this file with these names:
+     hero.jpg, advisor.jpg, marina.jpg, downtown.jpg, dubai-hills.jpg, business-bay.jpg, palm.jpg
+     (until then, branded illustrations show instead)
+-->
+<style>
+:root{
+  --paper:#FFFFFF;--stone:#F0F7FD;--surface:#FFFFFF;
+  --ink:#0E2B47;--text:#2A4560;--muted:#4F6780;
+  --bay:#E3F0FB;--bay-2:#CFE5F7;--tide:#F4F9FE;--tide-2:#EAF4FC;
+  --sun:#8EC5F0;--sun-soft:#B7DBF7;--sun-wash:#EAF5FE;--on-sun:#0E2B47;--sun-text:#1F5F96;
+  --glass:#A9D0F0;--glass-text:#2B5F8A;
+  --line:#D8E6F2;--line-dark:#CFE0EE;--line-strong:#6F8BA6;--focus:#1F5F96;
+  --display:"Marcellus","Times New Roman",serif;--sans:"Manrope","Segoe UI",Arial,sans-serif;
+  --wrap:1200px;--pad:clamp(20px,5vw,120px);--section:clamp(80px,10vw,128px);
+  --ease:cubic-bezier(.2,.7,.2,1);--ease-out:cubic-bezier(.16,1,.3,1);
+  --fast:180ms;--med:320ms;--slow:640ms;
+  --header-h:84px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px)}
+body{font-family:var(--sans);font-size:17px;line-height:1.65;color:var(--text);background:var(--paper);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+.dark :focus-visible,.hero :focus-visible{outline-color:var(--sun-soft)}
+::selection{background:var(--sun-soft);color:var(--on-sun)}
+.wrap{width:min(var(--wrap),100% - 2*var(--pad));margin-inline:auto}
+.section{padding-block:var(--section)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.h2{font-family:var(--display);font-weight:400;font-size:clamp(2rem,3.6vw,2.9rem);line-height:1.17;color:var(--ink);max-width:18ch;text-wrap:balance}
+.lead{font-size:clamp(1.05rem,1.4vw,1.25rem);line-height:1.6;color:var(--muted);max-width:58ch;margin-top:20px}
+.dark{background:var(--bay);color:#fff}
+.dark .h2{color:#fff}.dark .lead{color:rgba(255,255,255,.76)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;left:16px;top:-60px;z-index:200;background:var(--sun);color:var(--on-sun);padding:10px 16px;border-radius:8px;font-weight:700;transition:top var(--fast)}
+.skip:focus{top:16px}
+
+/* ---------- Buttons: elegant states ---------- */
+.btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;border:1.5px solid transparent;font-weight:600;font-size:15px;letter-spacing:.01em;text-decoration:none;cursor:pointer;white-space:nowrap;
+  transition:background-color var(--fast) var(--ease),color var(--fast) var(--ease),border-color var(--fast) var(--ease),transform var(--fast) var(--ease),box-shadow var(--med) var(--ease)}
+.btn:active{transform:scale(.97)}
+.btn .arr{transition:transform var(--med) var(--ease-out)}
+.btn:hover .arr{transform:translateX(4px)}
+.btn-sun{background:var(--sun);color:var(--on-sun);font-weight:700}
+.btn-sun:hover{background:var(--sun-soft);box-shadow:0 10px 28px -10px rgba(201,150,46,.6)}
+.btn-bay{background:var(--bay);color:#fff}
+.btn-bay:hover{background:var(--tide);box-shadow:0 10px 28px -12px rgba(11,34,41,.6)}
+.btn-outline{border-color:var(--line-strong);color:var(--ink);background:transparent}
+.btn-outline:hover{border-color:var(--ink);background:var(--ink);color:#fff}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.btn-sm{min-height:44px;padding:0 20px;font-size:14px}
+.btn[aria-busy="true"]{pointer-events:none}
+.btn .spin{width:16px;height:16px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:spin .7s linear infinite;display:none}
+.btn[aria-busy="true"] .spin{display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.tlink{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:15px;color:var(--sun-text);text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size var(--med) var(--ease-out)}
+.tlink:hover{background-size:100% 1px}
+.tlink svg{transition:transform var(--med) var(--ease-out)}
+.tlink:hover svg{transform:translateX(3px)}
+.ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* ---------- Sticky header ---------- */
+.header{position:fixed;inset:0 0 auto;z-index:100;padding-top:env(safe-area-inset-top,0px);color:#fff;
+  transition:background-color var(--med) var(--ease),box-shadow var(--med) var(--ease),transform var(--med) var(--ease-out)}
+.header.is-solid{background:rgba(18,48,58,.92);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.06),0 10px 30px -18px rgba(0,0,0,.5)}
+.header.is-hidden{transform:translateY(-100%)}
+.nav{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:24px;transition:height var(--med) var(--ease)}
+.header.is-solid .nav{height:68px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.logo svg{width:38px;height:38px;transition:transform var(--slow) var(--ease-out)}
+.logo:hover svg{transform:rotate(-8deg)}
+.logo b{display:block;font-family:var(--display);font-weight:400;font-size:22px;line-height:24px;letter-spacing:.02em}
+.logo small{display:block;font-size:11px;letter-spacing:.16em;color:rgba(255,255,255,.7)}
+.menu{display:flex;align-items:center;gap:32px;list-style:none}
+.menu a{position:relative;color:rgba(255,255,255,.84);text-decoration:none;font-size:15px;font-weight:500;padding:6px 0;transition:color var(--fast)}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--sun);transform:scaleX(0);transform-origin:right;transition:transform var(--med) var(--ease-out)}
+.menu a:hover,.menu a.is-active{color:#fff}
+.menu a:hover::after,.menu a.is-active::after{transform:scaleX(1);transform-origin:left}
+.nav-end{display:flex;align-items:center;gap:20px}
+.nav-phone{color:#fff;text-decoration:none;font-weight:600;font-size:15px}
+.burger{display:none;width:44px;height:44px;border:0;background:none;cursor:pointer;position:relative}
+.burger span{position:absolute;left:11px;right:11px;height:1.5px;background:#fff;transition:transform var(--med) var(--ease-out),opacity var(--fast)}
+.burger span:first-child{top:17px}.burger span:last-child{top:26px}
+.burger[aria-expanded="true"] span:first-child{transform:translateY(4.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:last-child{transform:translateY(-4.5px) rotate(-45deg)}
+.drawer{position:fixed;inset:0;z-index:99;background:var(--tide);padding:110px var(--pad) 40px;display:flex;flex-direction:column;gap:8px;
+  clip-path:circle(0% at calc(100% - 44px) 42px);transition:clip-path 560ms var(--ease-out);visibility:hidden}
+.drawer.is-open{clip-path:circle(150% at calc(100% - 44px) 42px);visibility:visible}
+.drawer a{font-family:var(--display);font-size:34px;color:#fff;text-decoration:none;padding:8px 0;border-bottom:1px solid var(--line-dark);opacity:0;transform:translateY(12px);transition:opacity 300ms var(--ease),transform 400ms var(--ease-out)}
+.drawer.is-open a{opacity:1;transform:none;transition-delay:calc(160ms + var(--i)*50ms)}
+.drawer .btn{margin-top:28px;align-self:stretch;font-family:var(--sans);font-size:16px;border:0;padding:0 28px;min-height:56px}
+
+/* ---------- Reveal system (subtle, once) ---------- */
+.js [data-reveal]{opacity:0;transform:translateY(16px);transition:opacity 620ms var(--ease),transform 720ms var(--ease-out);transition-delay:calc(var(--i,0)*70ms)}
+.js [data-reveal].is-in{opacity:1;transform:none}
+.js [data-reveal="fade"]{transform:none}
+.js [data-reveal="wipe"]{opacity:1;transform:none;clip-path:inset(0 0 100% 0 round 24px);transition:clip-path 1000ms var(--ease-out);transition-delay:calc(var(--i,0)*90ms)}
+.js [data-reveal="wipe"].is-in{clip-path:inset(0 0 0 0 round 24px)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:max(720px,100svh);color:#fff;overflow:hidden;background:linear-gradient(180deg,var(--tide) 0%,var(--bay) 45%,var(--bay-2) 80%);display:flex;flex-direction:column}
+.hero-bg{position:absolute;inset:0;pointer-events:none}
+.hero-bg svg{position:absolute;left:0;bottom:88px;width:100%;height:auto}
+.hero-sun{transform-box:fill-box;transform-origin:center;animation:sunrise 1.6s var(--ease-out) both .15s}
+.hero-halo{animation:sunrise 1.9s var(--ease-out) both .1s}
+@keyframes sunrise{from{transform:translateY(90px);opacity:0}to{transform:none;opacity:1}}
+.hero-body{position:relative;flex:1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center;padding-top:calc(var(--header-h) + 40px);padding-bottom:140px}
+.hero-copy{grid-column:span 7}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.5rem,4.8vw,4.25rem);line-height:1.06;letter-spacing:-.01em}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .line>span{display:block;animation:lineUp 900ms var(--ease-out) both;animation-delay:calc(250ms + var(--i)*90ms)}
+@keyframes lineUp{from{transform:translateY(105%)}to{transform:none}}
+.hero .sub{margin-top:24px;max-width:36em;font-size:clamp(1.05rem,1.4vw,1.25rem);line-height:1.6;color:rgba(255,255,255,.82)}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.hero .ctas .btn{min-height:56px;font-size:16px}
+.proof{display:flex;align-items:center;gap:10px;margin-top:32px;font-size:14px;color:rgba(255,255,255,.8)}
+.proof .sep{width:1px;height:18px;background:rgba(255,255,255,.25)}
+.proof svg{color:var(--sun-soft)}
+.intro>*{animation:fadeUp 800ms var(--ease-out) both;animation-delay:calc(600ms + var(--i)*110ms)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.sheet{grid-column:9 / span 4;background:var(--surface);color:var(--text);border-radius:16px;padding:28px 30px;box-shadow:0 30px 60px -30px rgba(0,0,0,.55);animation:sheetIn 1s var(--ease-out) both .9s;transition:transform var(--slow) var(--ease-out)}
+.sheet:hover{transform:translateY(-4px)}
+@keyframes sheetIn{from{opacity:0;transform:translateY(28px) scale(.98)}to{opacity:1;transform:none}}
+.sheet h2{font-family:var(--display);font-weight:400;font-size:25px;line-height:1.25;color:var(--ink)}
+.sheet .note{font-size:13px;color:var(--muted);margin-top:4px}
+.sheet dl{margin-top:16px}
+.sheet .row{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-top:1px solid var(--line);font-size:15px;transition:background-color var(--fast),padding var(--med) var(--ease-out)}
+.sheet .row:last-child{border-bottom:1px solid var(--line)}
+.sheet .row:hover{background:var(--sun-wash);padding-inline:10px;margin-inline:-10px}
+.sheet dt{font-weight:600;color:var(--ink)}
+.sheet dd{color:var(--muted);text-align:right}
+.sheet .verdict{margin-top:14px;font-size:14px;font-weight:600;color:var(--glass-text)}
+.svc-bar{position:absolute;left:0;right:0;bottom:0;height:88px;background:var(--tide-2);border-top:1px solid var(--line-dark)}
+.svc-bar ul{height:100%;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.svc-bar li{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.88);font-size:15px;font-weight:500}
+.svc-bar li svg{color:var(--sun-soft)}
+
+/* ---------- Trust ---------- */
+.trust{background:var(--bay);color:#fff;padding:36px 0}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px}
+.trust .mk{display:block;width:24px;height:2px;background:var(--sun);margin-bottom:16px;transform-origin:left;transition:transform 700ms var(--ease-out) calc(var(--i)*90ms + 200ms)}
+.js .trust [data-reveal] .mk{transform:scaleX(0)}
+.js .trust [data-reveal].is-in .mk{transform:scaleX(1)}
+.trust strong{display:block;font-family:var(--display);font-weight:400;font-size:25px;line-height:1.3;color:var(--sun-soft)}
+.trust span{font-size:15px;color:rgba(255,255,255,.76)}
+@media (max-width:900px){.trust .wrap{grid-template-columns:1fr 1fr;gap:28px}}
+
+/* ---------- Services ---------- */
+.split-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
+.split-head>:first-child{grid-column:span 6}.split-head>:last-child{grid-column:8/span 5}
+.split-head .lead{margin-top:0}
+.svc{margin-top:64px;display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.svc article{position:relative;border-top:1px solid var(--line);padding:48px 56px 48px 0;display:grid;grid-template-columns:56px 1fr;gap:0 20px}
+.svc article:nth-child(even){border-left:1px solid var(--line);padding:48px 0 48px 56px}
+.svc article::before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:var(--sun);transform:scaleX(0);transform-origin:left;transition:transform 600ms var(--ease-out)}
+.svc article:hover::before{transform:scaleX(1)}
+.tile{width:48px;height:48px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);transition:background-color var(--med) var(--ease),color var(--med),border-color var(--med),transform var(--med) var(--ease-out)}
+.svc article:hover .tile{background:var(--bay);border-color:var(--bay);color:var(--sun-soft);transform:rotate(-6deg)}
+.svc h3{font-family:var(--display);font-weight:400;font-size:28px;line-height:1.3;color:var(--ink)}
+.svc p{margin-top:12px;color:var(--muted);max-width:44ch}
+.svc .meta{margin-top:20px;display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:30rem}
+.svc .for{font-size:15px;font-weight:600;color:var(--glass-text)}
+@media (max-width:900px){.split-head>*{grid-column:1/-1!important}.svc{grid-template-columns:1fr}.svc article,.svc article:nth-child(even){padding:36px 0;border-left:0}}
+
+/* ---------- Photos (image transitions) ---------- */
+.photo{position:relative;overflow:hidden;border-radius:24px;background:linear-gradient(160deg,var(--g1,#2A6B77),var(--g2,#12303A))}
+.photo>svg{position:absolute;inset:auto 0 0 0;width:100%;height:auto}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 900ms var(--ease),transform 1600ms var(--ease-out)}
+.photo img.is-loaded{opacity:1;transform:none}
+.photo .cap{position:absolute;left:16px;top:16px;z-index:2;padding:4px 10px;border-radius:4px;background:rgba(11,34,41,.6);color:#fff;font-size:12px;font-weight:500}
+.photo.has-img .cap{display:none}
+
+/* ---------- Why ---------- */
+.why{background:var(--stone)}
+.why .col-a{grid-column:span 5}.why .col-b{grid-column:7/span 6}
+.why .photo{height:420px;margin-top:56px}
+.ben{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:30px 0;border-top:1px solid #CDD4D2}
+.ben:first-child{border-top:0;padding-top:0}
+.ben .circ{width:56px;height:56px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--ink);transition:transform var(--med) var(--ease-out),background-color var(--med),color var(--med)}
+.ben:hover .circ{background:var(--sun);color:var(--on-sun);transform:scale(1.06)}
+.ben h3{font-family:var(--display);font-weight:400;font-size:25px;line-height:1.3;color:var(--ink)}
+.ben p{margin-top:8px;color:var(--muted);max-width:52ch}
+@media (max-width:900px){.why .col-a,.why .col-b{grid-column:1/-1}.why .photo{height:300px;margin-bottom:24px}}
+
+/* ---------- Communities ---------- */
+.head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.mosaic{margin-top:64px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.comm{position:relative;display:block;border-radius:24px;overflow:hidden;color:#fff;text-decoration:none;height:340px;grid-column:span 4;isolation:isolate}
+.comm.big{height:440px}.comm.w7{grid-column:span 7}.comm.w5{grid-column:span 5}
+.comm .photo{position:absolute;inset:0;border-radius:0;transition:transform 1100ms var(--ease-out)}
+.comm::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(11,34,41,0) 38%,rgba(11,34,41,.88));transition:opacity var(--slow) var(--ease)}
+.comm:hover .photo{transform:scale(1.045)}
+.comm .info{position:absolute;left:32px;right:32px;bottom:28px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.comm .tag{display:inline-block;padding:2px 10px;border-radius:4px;background:rgba(255,255,255,.16);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-size:13px;font-weight:600}
+.comm h3{margin-top:10px;font-family:var(--display);font-weight:400;font-size:32px;line-height:1.2}
+.comm p{margin-top:4px;font-size:15px;color:rgba(255,255,255,.85);max-height:0;opacity:0;overflow:hidden;transition:max-height var(--slow) var(--ease-out),opacity var(--med)}
+.comm:hover p,.comm:focus-visible p{max-height:60px;opacity:1}
+.comm .go{flex-shrink:0;width:48px;height:48px;border-radius:50%;background:var(--sun);color:var(--on-sun);display:grid;place-items:center;transition:transform var(--med) var(--ease-out),background-color var(--fast)}
+.comm:hover .go{transform:rotate(-45deg);background:var(--sun-soft)}
+.comm .cap{top:16px}
+@media (hover:none){.comm p{max-height:none;opacity:1}}
+@media (max-width:900px){.comm,.comm.w7,.comm.w5{grid-column:1/-1;height:300px}}
+.note-line{margin-top:32px;font-size:15px;color:var(--muted)}
+
+/* ---------- Process ---------- */
+.process{position:relative;overflow:hidden}
+.process::before{content:"";position:absolute;right:-120px;top:-280px;width:520px;height:520px;border-radius:50%;background:var(--sun);opacity:.07}
+.steps{position:relative;margin-top:88px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:48px;list-style:none}
+.steps::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:rgba(127,167,160,.3)}
+.steps::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--sun);transform:scaleX(0);transform-origin:left;transition:transform 1400ms var(--ease-out)}
+.steps.is-in::after{transform:scaleX(1)}
+.steps li{position:relative;padding-top:36px}
+.steps .dot{position:absolute;left:0;top:-9px;width:18px;height:18px;border-radius:50%;background:var(--bay);border:2px solid rgba(127,167,160,.6);transition:border-color 300ms,background-color 300ms,transform 400ms var(--ease-out);transition-delay:calc(var(--i)*320ms + 200ms)}
+.steps.is-in .dot{border-color:var(--sun);background:var(--sun);transform:scale(1.1)}
+.steps .num{font-family:var(--display);font-size:60px;line-height:1;color:var(--sun-soft)}
+.steps h3{margin-top:20px;font-family:var(--display);font-weight:400;font-size:24px;line-height:1.3;color:#fff}
+.steps p{margin-top:10px;font-size:16px;color:rgba(255,255,255,.74)}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr;gap:56px 32px}.steps::before,.steps::after{display:none}.steps .dot{display:none}.steps li{padding-top:0}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* ---------- Testimonials ---------- */
+.quotes{margin-top:56px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.feat{grid-column:span 7;position:relative;overflow:hidden;border-radius:24px;background:var(--bay);color:#fff;padding:56px;min-height:520px;display:flex;flex-direction:column;justify-content:space-between}
+.feat .disc{position:absolute;right:-40px;bottom:-60px;width:220px;height:220px;border-radius:50%;background:var(--sun);transition:transform 1200ms var(--ease-out)}
+.feat:hover .disc{transform:translate(-12px,-16px)}
+.feat .qm{font-family:var(--display);font-size:120px;line-height:.7;color:var(--sun-soft)}
+.feat blockquote{position:relative;margin-top:24px;max-width:22em;font-family:var(--display);font-size:clamp(1.5rem,2.3vw,2rem);line-height:1.38}
+.feat figcaption{position:relative;margin-top:40px;font-size:15px;color:rgba(255,255,255,.78)}
+.feat figcaption b{display:block;color:#fff;font-size:16px}
+.qcol{grid-column:span 5;display:flex;flex-direction:column;gap:24px}
+.qcard{flex:1;background:#fff;border:1px solid var(--line);border-radius:16px;padding:36px;display:flex;flex-direction:column;justify-content:space-between;transition:transform var(--med) var(--ease-out),box-shadow var(--med) var(--ease),border-color var(--med)}
+.qcard:hover{transform:translateY(-3px);border-color:transparent;box-shadow:0 2px 6px rgba(11,34,41,.06),0 18px 40px rgba(11,34,41,.1)}
+.qcard blockquote{font-family:var(--display);font-size:21px;line-height:1.5;color:var(--ink)}
+.qcard figcaption{margin-top:24px;display:flex;align-items:center;gap:14px;font-size:15px;color:var(--muted)}
+.qcard figcaption b{display:block;color:var(--ink)}
+.av{width:44px;height:44px;border-radius:50%;background:var(--stone);display:grid;place-items:center;font-weight:700;color:var(--ink)}
+@media (max-width:900px){.feat,.qcol{grid-column:1/-1}.feat{padding:36px;min-height:0}}
+
+/* ---------- Fees ---------- */
+.fees{background:var(--stone)}
+.fees .col-a{grid-column:span 4}.fees .col-b{grid-column:6/span 7}
+.fees .foot{margin-top:40px;padding-top:24px;border-top:1px solid #CDD4D2;font-size:14px;color:var(--muted);max-width:30em}
+.table{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(11,34,41,.05)}
+.frow{position:relative;display:grid;grid-template-columns:1.5fr 1fr 2fr;gap:24px;align-items:center;padding:28px 40px;border-top:1px solid var(--line);transition:background-color var(--med)}
+.frow:first-child{border-top:0}
+.frow::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--sun);transform:scaleY(0);transition:transform var(--med) var(--ease-out)}
+.frow:hover{background:#FAFBFA}.frow:hover::before{transform:scaleY(1)}
+.frow.hl{background:var(--sun-wash)}
+.frow h3{font-size:18px;font-weight:600;color:var(--ink)}
+.frow .badge{display:inline-block;margin-left:10px;padding:2px 10px;border-radius:4px;background:var(--sun);color:var(--on-sun);font-size:12px;font-weight:700;vertical-align:middle}
+.frow .fig{font-family:var(--display);font-size:40px;line-height:1.1;color:var(--sun-text)}
+.frow .unit{display:block;font-size:13px;color:var(--muted)}
+.frow .fig-sm{font-size:28px}
+.frow p{font-size:15px;color:var(--muted)}
+@media (max-width:900px){.fees .col-a,.fees .col-b{grid-column:1/-1}.frow{grid-template-columns:1fr 1fr;padding:24px}.frow p{grid-column:1/-1}}
+
+/* ---------- FAQ (animated accordion) ---------- */
+.faq .col-a{grid-column:span 4}.faq .col-b{grid-column:6/span 7;border-top:1px solid var(--line)}
+.ask{margin-top:48px;padding:32px;border-radius:16px;background:var(--stone)}
+.ask h3{font-family:var(--display);font-weight:400;font-size:24px;color:var(--ink)}
+.ask p{margin:8px 0 24px;font-size:15px;color:var(--muted)}
+.qa{border-bottom:1px solid var(--line)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0;border:0;background:none;text-align:left;cursor:pointer;font-size:18px;font-weight:600;color:var(--ink);transition:color var(--fast)}
+.qa button:hover{color:var(--sun-text)}
+.qa .pm{position:relative;width:22px;height:22px;flex-shrink:0}
+.qa .pm::before,.qa .pm::after{content:"";position:absolute;left:3px;right:3px;top:10px;height:1.5px;background:var(--sun-text);transition:transform var(--med) var(--ease-out)}
+.qa .pm::after{transform:rotate(90deg)}
+.qa.is-open .pm::after{transform:rotate(0)}
+.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows var(--med) var(--ease-out)}
+.qa.is-open .ans{grid-template-rows:1fr}
+.qa .ans>div{overflow:hidden}
+.qa .ans p{padding-bottom:26px;max-width:62ch;color:var(--muted);opacity:0;transform:translateY(-6px);transition:opacity var(--med),transform var(--med) var(--ease-out)}
+.qa.is-open .ans p{opacity:1;transform:none}
+@media (max-width:900px){.faq .col-a,.faq .col-b{grid-column:1/-1}}
+
+/* ---------- Final CTA + contact ---------- */
+.finale{position:relative;background:var(--tide);color:#fff;overflow:hidden}
+.sky{position:relative;overflow:hidden;text-align:center;padding:120px 0 150px;background:linear-gradient(180deg,var(--bay-2),var(--tide))}
+.sky .h2{color:#fff;margin-inline:auto;max-width:20ch;font-size:clamp(2.2rem,4.2vw,3.6rem)}
+.sky .lead{margin-inline:auto;color:rgba(255,255,255,.8)}
+.sky .ctas{margin-top:36px;display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
+.sky .sun2{position:absolute;left:50%;bottom:-170px;width:340px;height:340px;margin-left:-170px;border-radius:50%;background:var(--sun);transform:translateY(calc(var(--p,1)*120px));transition:transform 120ms linear}
+.contact{padding:96px 0 var(--section)}
+.contact .col-a{grid-column:span 4}.contact .col-b{grid-column:6/span 7}
+.contact .h2{color:#fff;font-size:clamp(2rem,3vw,2.5rem)}
+.contact .intro-p{margin:16px 0 32px;color:rgba(255,255,255,.74)}
+.cdetails{list-style:none}
+.cdetails li{display:flex;gap:16px;padding:20px 0;border-top:1px solid var(--line-dark);font-size:15px;color:rgba(255,255,255,.72)}
+.cdetails svg{color:var(--sun-soft)}
+.cdetails b{display:block;color:#fff;font-weight:600}
+.cdetails a{text-decoration:none;transition:color var(--fast)}.cdetails a:hover{color:var(--sun-soft)}
+.form{background:#fff;color:var(--text);border-radius:24px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.fld{display:flex;flex-direction:column;gap:8px}.fld.full{grid-column:1/-1}
+.fld label{font-size:14px;font-weight:600;color:var(--ink);transition:color var(--fast)}
+.fld:focus-within label{color:var(--sun-text)}
+.fld input,.fld select,.fld textarea{font:inherit;font-size:16px;color:var(--text);background:#fff;border:1.5px solid var(--line-strong);border-radius:10px;min-height:50px;padding:0 16px;transition:border-color var(--fast),box-shadow var(--med) var(--ease)}
+.fld textarea{padding:14px 16px;min-height:104px;resize:vertical}
+.fld input:hover,.fld select:hover,.fld textarea:hover{border-color:var(--ink)}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--sun-text);box-shadow:0 0 0 4px rgba(201,150,46,.22)}
+.fld.err input{border-color:#A5503A;animation:shake 360ms var(--ease)}
+.fld .msg{font-size:13px;color:#A5503A;display:none}.fld.err .msg{display:block}
+@keyframes shake{25%{transform:translateX(-4px)}50%{transform:translateX(4px)}75%{transform:translateX(-2px)}}
+.form .submit{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:8px}
+.form .small{font-size:13px;color:var(--muted);max-width:30em}
+.sent{grid-column:1/-1;display:none;align-items:center;gap:12px;padding:14px 16px;border-radius:10px;background:#EEF5F1;color:#2F6B4F;font-weight:600;font-size:15px}
+.sent.show{display:flex;animation:fadeUp 400ms var(--ease-out)}
+.sent svg path{stroke-dasharray:24;stroke-dashoffset:24;animation:draw 500ms var(--ease-out) forwards 150ms}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (max-width:900px){.contact .col-a,.contact .col-b{grid-column:1/-1}}
+@media (max-width:560px){.form{grid-template-columns:1fr;padding:24px}.form .submit{flex-direction:column;align-items:stretch}}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--tide-2);color:rgba(255,255,255,.7);padding:88px 0 calc(40px + env(safe-area-inset-bottom,0px));font-size:15px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.footer h4{color:#fff;font-size:14px;font-weight:600;margin-bottom:16px}
+.footer ul{list-style:none;display:grid;gap:10px}
+.footer a{text-decoration:none;transition:color var(--fast)}.footer a:hover{color:var(--sun-soft)}
+.legal{margin-top:72px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:13px;color:rgba(255,255,255,.62)}
+@media (max-width:900px){.fgrid{grid-template-columns:1fr 1fr}.fgrid>:first-child{grid-column:1/-1}}
+
+/* ---------- WhatsApp float ---------- */
+.wa{position:fixed;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:90;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(11,34,41,.28);
+  opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;transition:opacity var(--med),transform var(--med) var(--ease-out)}
+.wa.show{opacity:1;transform:none;pointer-events:auto}
+.wa:hover{transform:scale(1.06)}
+.wa svg{width:28px;height:28px;fill:#fff}
+.wa .tip{position:absolute;right:70px;white-space:nowrap;background:var(--ink);color:#fff;font-size:13px;font-weight:600;padding:8px 12px;border-radius:8px;opacity:0;transform:translateX(6px);transition:opacity var(--fast),transform var(--med) var(--ease-out);pointer-events:none}
+.wa:hover .tip,.wa:focus-visible .tip{opacity:1;transform:none}
+
+/* =====================================================================
+   RESPONSIVE SYSTEM
+   Desktop ≥1280 · Laptop 1024-1279 · Tablet 768-1023 · Mobile <768 · Small ≤380
+   ===================================================================== */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* Touch targets: every control at least 44px tall */
+.logo{min-height:44px}
+.menu a{display:inline-flex;align-items:center;min-height:44px;padding:0}
+.menu a::after{bottom:8px}
+.svc-bar a{min-height:44px}
+.tlink{min-height:44px}
+.cdetails a{display:inline-flex;align-items:center;min-height:44px;margin:-12px 0}
+a,button,summary{-webkit-tap-highlight-color:transparent}
+.form{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.form>*,.grid>*{min-width:0}
+
+/* Hover effects only for real pointers; touch gets press feedback instead */
+@media (hover:none){
+  .sheet:hover,.qcard:hover{transform:none;box-shadow:none}
+  .qcard:hover{border-color:var(--line)}
+  .comm:hover .photo{transform:none}.comm:hover .go{transform:none}
+  .feat:hover .disc{transform:none}
+  .svc article:hover::before{transform:scaleX(0)}
+  .svc article:hover .tile{background:transparent;border-color:var(--line);color:var(--ink);transform:none}
+  .ben:hover .circ{background:#fff;color:var(--ink);transform:none}
+  .comm:active .photo{transform:scale(1.02)}
+  .qcard:active,.comm:active{transform:scale(.99)}
+  .qa button:active{color:var(--sun-text)}
+}
+
+/* ---------- Laptop 1024-1279 ---------- */
+@media (max-width:1279px){
+  .nav-phone{display:none}
+  .menu{gap:24px}
+  .hero-copy{grid-column:span 7}
+  .sheet{grid-column:8/span 5;padding:24px}
+  .hero h1{font-size:clamp(2.5rem,4.6vw,3.5rem)}
+  .svc article{padding-right:40px}.svc article:nth-child(even){padding-left:40px}
+  .feat{padding:44px}
+  .frow{padding:24px 28px;gap:16px}
+  .form{padding:32px}
+  .form .submit{flex-wrap:wrap}
+  .form .submit .btn{flex-shrink:0}
+  .svc .meta{flex-direction:column;align-items:flex-start;gap:8px}
+  .hero .ctas .btn{padding:0 24px}
+}
+
+/* ---------- Tablet 768-1023 ---------- */
+@media (max-width:1023px){
+  :root{--header-h:72px}
+  .menu,.nav-end .btn{display:none}
+  .burger{display:block}
+  .hero{min-height:auto}
+  .hero-body{grid-template-columns:1fr;gap:40px;padding-top:calc(var(--header-h) + 56px);padding-bottom:156px}
+  .hero-copy,.sheet{grid-column:1/-1}
+  .hero h1{font-size:clamp(2.6rem,6.6vw,3.6rem)}
+  .sheet{max-width:none}
+  .sheet dl{display:grid;grid-template-columns:1fr 1fr;column-gap:32px}
+  .sheet .row:nth-last-child(2){border-bottom:1px solid var(--line)}
+  .svc-bar{height:auto;padding:20px 0}
+  .svc-bar ul{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px}
+  .svc-bar li{font-size:14px}
+  .trust .wrap{grid-template-columns:1fr 1fr;gap:28px 40px}
+
+  .split-head>*{grid-column:1/-1!important}
+  .svc{grid-template-columns:1fr 1fr}
+  .svc article,.svc article:nth-child(even){grid-template-columns:1fr;gap:20px;padding:36px 28px 36px 0}
+  .svc article:nth-child(even){padding:36px 0 36px 28px;border-left:1px solid var(--line)}
+  .svc .meta{flex-direction:column;align-items:flex-start;gap:10px}
+
+  .why .col-a,.why .col-b{grid-column:1/-1}
+  .why .col-a{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;align-items:start}
+  .why .col-a>.h2,.why .col-a>.lead,.why .col-a>div:not(.photo){grid-column:1}
+  .why .photo{grid-column:2;grid-row:1/span 3;height:100%;min-height:300px;margin-top:0}
+  .why .col-b{margin-top:48px;max-width:680px}
+
+  .mosaic{grid-template-columns:1fr 1fr;gap:16px}
+  .comm,.comm.w5{grid-column:span 1;height:300px}
+  .comm.w7{grid-column:1/-1;height:380px}
+  .comm p{max-height:none;opacity:1}
+
+  .steps{grid-template-columns:1fr 1fr;gap:56px 40px}
+  .steps::before,.steps::after,.steps .dot{display:none}
+  .steps li{padding-top:0}
+
+  .feat,.qcol{grid-column:1/-1}
+  .feat{min-height:380px}
+  .qcol{flex-direction:row}
+  .qcard{padding:28px}
+
+  .fees .col-a,.fees .col-b{grid-column:1/-1}
+  .fees .col-a{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;align-items:end}
+  .fees .foot{grid-column:2;grid-row:1/span 2;margin:0;border-top:0;padding-top:0}
+  .fees .col-b{margin-top:40px}
+
+  .faq .grid{display:flex;flex-direction:column;gap:0}
+  .faq .col-a{display:contents}
+  .faq .col-a>.h2{order:1}.faq .col-b{order:2;margin-top:40px}.faq .ask{order:3;margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+  .faq .ask p{margin:4px 0 0}
+
+  .contact .col-a,.contact .col-b{grid-column:1/-1}
+  .cdetails{display:grid;grid-template-columns:1fr 1fr;column-gap:32px}
+  .contact .col-b{margin-top:40px}
+
+  .fgrid{grid-template-columns:repeat(3,1fr);gap:40px 32px}
+  .fgrid>:first-child{grid-column:1/-1}
+}
+
+/* ---------- Mobile <768 ---------- */
+@media (max-width:767px){
+  :root{--header-h:64px;--section:72px}
+  body{font-size:16px;line-height:1.6}
+  .h2{font-size:clamp(1.85rem,7.4vw,2.3rem);max-width:none}
+  .lead{font-size:1.05rem;margin-top:14px}
+  .logo svg{width:32px;height:32px}.logo b{font-size:20px}.logo small{font-size:10px}
+  .btn{min-height:50px}
+
+  /* Hero: copy first, compact proof sheet, no service bar (bottom bar takes over) */
+  .hero-body{gap:32px;padding-top:calc(var(--header-h) + 36px);padding-bottom:88px}
+  .hero h1{font-size:clamp(2.2rem,10vw,2.9rem);line-height:1.08}
+  .hero h1 .line{display:inline}.hero h1 .line>span{display:inline}
+  .hero .sub{font-size:1.02rem;margin-top:18px}
+  .hero .ctas{flex-direction:column;align-items:stretch;gap:12px;margin-top:28px}
+  .hero .ctas .btn{width:100%}
+  .proof{gap:8px 14px;margin-top:22px}
+  .sheet{padding:22px 20px}
+  .sheet h2{font-size:22px}
+  .sheet dl{display:block}
+  .sheet .row{padding:11px 0;font-size:14px}
+  .sheet dd{max-width:55%}
+  .sheet .row:nth-last-child(2){border-bottom:0}
+  .svc-bar{position:relative;padding:22px 0}
+  .svc-bar ul{grid-template-columns:1fr;gap:12px}
+  .hero-body{padding-bottom:56px}
+  .hero-bg svg{bottom:0;width:180%;left:-60%}
+
+  .trust{padding:32px 0}
+  .trust .wrap{gap:24px 20px}
+  .trust strong{font-size:20px}.trust span{font-size:14px;line-height:1.5}
+
+  /* Services: clean list with icon beside title */
+  .svc{grid-template-columns:1fr;margin-top:36px}
+  .svc article,.svc article:nth-child(even){grid-template-columns:44px 1fr;gap:0 16px;padding:28px 0;border-left:0}
+  .tile{width:44px;height:44px;border-radius:10px}
+  .svc h3{font-size:23px}
+  .svc p{font-size:15.5px;margin-top:8px}
+  .svc .meta{margin-top:14px}
+  .tlink{min-height:44px}
+
+  /* Why: photo becomes a wide banner after the intro */
+  .why .col-a{display:block}
+  .why .photo{height:220px;min-height:0;margin-top:32px}
+  .why .col-b{margin-top:36px}
+  .ben{grid-template-columns:44px 1fr;gap:16px;padding:22px 0}
+  .ben .circ{width:44px;height:44px}.ben .circ .ico{width:20px;height:20px}
+  .ben h3{font-size:21px}.ben p{font-size:15.5px}
+
+  /* Communities + reviews: swipeable rails with a peek of the next card */
+  .head-row{gap:20px}
+  .head-row>.btn{width:100%}
+  .mosaic,.qcol{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;
+    margin-inline:calc(-1*var(--pad));padding:4px var(--pad) 8px;scroll-padding-inline:var(--pad);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .mosaic::-webkit-scrollbar,.qcol::-webkit-scrollbar{display:none}
+  .mosaic{margin-top:32px}
+  .comm,.comm.w7,.comm.w5{flex:0 0 min(82vw,340px);height:400px;scroll-snap-align:start;border-radius:20px}
+  .comm .info{left:22px;right:22px;bottom:22px}
+  .comm h3{font-size:27px}
+  .comm .go{width:44px;height:44px}
+  .rail-hint{display:flex}
+
+  .steps{isolation:isolate;grid-template-columns:1fr;gap:0;margin-top:44px}
+  .steps li{position:relative;z-index:1;padding:0 0 32px 60px;min-height:0}
+  .steps li:last-child{padding-bottom:0}
+  .steps::before{display:block;z-index:0;left:21px;right:auto;top:22px;bottom:22px;width:1px;height:auto}
+  .steps::after{display:block;z-index:0;left:21px;right:auto;top:22px;bottom:22px;width:1px;height:auto;transform:scaleY(0);transform-origin:top}
+  .steps.is-in::after{transform:scaleY(1)}
+  .steps .dot{display:none}
+  .steps .num{position:absolute;z-index:2;left:0;top:0;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--sun);background:var(--bay);display:grid;place-items:center;font-size:22px;color:var(--sun-soft)}
+  .steps h3{margin-top:6px;font-size:21px}
+  .steps p{font-size:15.5px;margin-top:6px}
+
+  .quotes{margin-top:32px;gap:14px}
+  .feat{padding:30px 26px;min-height:0;border-radius:20px}
+  .feat .qm{font-size:88px}
+  .feat .disc{width:150px;height:150px;right:-40px;bottom:-50px}
+  .feat blockquote{font-size:1.35rem;margin-top:12px}
+  .feat figcaption{margin-top:28px}
+  .qcol{flex-direction:row}
+  .qcard{flex:0 0 85%;scroll-snap-align:start;padding:26px}
+  .qcard blockquote{font-size:19px}
+
+  .fees .col-a{display:block}
+  .fees .foot{margin-top:24px;padding-top:20px;border-top:1px solid #CDD4D2}
+  .fees .col-b{margin-top:32px}
+  .table{border-radius:14px}
+  .frow{grid-template-columns:1fr auto;gap:6px 16px;padding:22px 20px}
+  .frow h3{font-size:16.5px}
+  .frow>div{text-align:right}
+  .frow .fig{font-size:32px}
+  .frow .badge{display:table;margin:8px 0 0}
+  .frow p{grid-column:1/-1;font-size:14.5px}
+
+  .faq .col-b{margin-top:28px}
+  .qa button{font-size:16.5px;padding:20px 0;min-height:56px}
+  .qa .ans p{font-size:15.5px;padding-bottom:22px}
+  .faq .ask{flex-direction:column;align-items:stretch;padding:24px}
+  .faq .ask .btn{width:100%}
+
+  .sky{padding:84px 0 120px}
+  .sky .h2{font-size:clamp(1.9rem,8vw,2.4rem)}
+  .sky .ctas{flex-direction:column;align-items:stretch;padding-inline:8px}
+  .sky .sun2{width:240px;height:240px;margin-left:-120px;bottom:-120px}
+  .contact{padding:64px 0 88px}
+  .cdetails{grid-template-columns:1fr}
+  .cdetails li{padding:16px 0}
+  .form{grid-template-columns:1fr;padding:24px 20px;border-radius:20px;gap:18px}
+  .form .submit{flex-direction:column-reverse;align-items:stretch;gap:14px}
+  .form .submit .btn{width:100%}
+
+  .footer{padding:64px 0 calc(110px + env(safe-area-inset-bottom,0px))}
+  .fgrid{grid-template-columns:1fr 1fr;gap:36px 24px}
+  .fgrid>:last-child{grid-column:1/-1}
+  .fgrid>:last-child ul{grid-template-columns:repeat(4,auto);justify-content:start;gap:10px 20px}
+  .footer ul a{display:inline-block;padding:4px 0}
+  .legal{margin-top:48px;flex-direction:column}
+
+  /* Floating WhatsApp replaced by the thumb bar */
+  .wa{display:none}
+  .actionbar{display:grid}
+}
+
+/* ---------- Small phones ≤380 ---------- */
+@media (max-width:380px){
+  :root{--pad:18px}
+  .hero h1{font-size:2.05rem}
+  .proof{font-size:12.5px}
+  .sheet dd{font-size:13px}
+  .comm,.comm.w7,.comm.w5{flex-basis:86vw;height:360px}
+}
+
+/* ---------- Short landscape screens (phones sideways) ---------- */
+@media (max-height:520px) and (orientation:landscape) and (max-width:767px){.actionbar{display:none!important}}
+@media (max-height:520px) and (orientation:landscape){
+  .hero{min-height:auto}
+  .hero-body{padding-top:calc(var(--header-h) + 28px);padding-bottom:48px}
+  .drawer{padding-top:84px;overflow-y:auto}.drawer a{font-size:24px;padding:6px 0}
+  .actionbar{display:none}
+}
+
+/* ---------- Mobile thumb bar ---------- */
+.actionbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:95;grid-template-columns:52px 52px 1fr;gap:8px;
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(8,26,32,.94);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-top:1px solid var(--line-dark);transform:translateY(110%);transition:transform var(--med) var(--ease-out)}
+.actionbar.show{transform:none}
+.actionbar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:12px;color:#fff;text-decoration:none;font-size:14px;font-weight:600;background:rgba(255,255,255,.08);transition:background-color var(--fast),transform var(--fast)}
+.actionbar a:active{transform:scale(.96);background:rgba(255,255,255,.16)}
+.actionbar a.book{background:var(--sun);color:var(--on-sun);font-weight:700;font-size:15px}
+.actionbar .ico{width:20px;height:20px}
+.rail-hint{display:none;align-items:center;gap:8px;margin-top:14px;font-size:13px;color:var(--muted)}
+@media (max-width:767px){.actionbar{display:grid}.js .mosaic [data-reveal],.js .qcol [data-reveal]{opacity:1;transform:none;clip-path:none}.rail-hint{display:flex}.proof{align-items:flex-start;font-size:13.5px}}
+
+
+
+/* ---------- Buy / Sell / Rent tabs ---------- */
+.anchor{display:block;height:0;overflow:hidden;scroll-margin-top:28px}
+.kicker{font-size:15px;font-weight:600;color:var(--sun-text);margin-bottom:14px}
+.tabs{position:relative;display:inline-flex;gap:4px;margin-top:48px;padding:6px;border-radius:999px;background:var(--stone);border:1px solid var(--line)}
+.tab{position:relative;z-index:1;min-height:48px;min-width:112px;padding:0 26px;border:0;border-radius:999px;background:transparent;cursor:pointer;font-size:16px;font-weight:600;color:var(--muted);transition:color var(--med) var(--ease)}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--ink)}
+.tab-ink{position:absolute;z-index:0;top:6px;bottom:6px;left:0;width:0;border-radius:999px;background:#fff;box-shadow:0 2px 10px -2px rgba(31,95,150,.25);transition:transform var(--med) var(--ease-out),width var(--med) var(--ease-out)}
+.panels{margin-top:40px}
+.panel{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:start}
+.panel[hidden]{display:none}
+.panel:not([hidden]){animation:panelIn 420ms var(--ease-out)}
+@keyframes panelIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.panel:focus-visible{outline-offset:8px}
+.panel-copy{grid-column:span 5}
+.panel-copy h3{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,2.4vw,2.1rem);line-height:1.2;color:var(--ink);max-width:16ch}
+.panel-copy>p{margin-top:16px;color:var(--muted);max-width:40ch}
+.ticks{list-style:none;margin-top:28px;display:grid;gap:14px}
+.ticks li{display:flex;gap:12px;align-items:flex-start;color:var(--text);font-size:16px}
+.ticks svg{color:var(--sun-text);margin-top:3px}
+.paths{grid-column:7/span 6;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.path{display:flex;flex-direction:column;padding:32px 28px;border-radius:20px;background:#fff;border:1px solid var(--line);transition:border-color var(--med),box-shadow var(--med) var(--ease),transform var(--med) var(--ease-out)}
+.path>svg{width:40px;height:40px;padding:8px;border-radius:12px;background:var(--stone);color:var(--sun-text)}
+.path h4{margin-top:22px;font-family:var(--display);font-weight:400;font-size:24px;color:var(--ink)}
+.path p{margin-top:10px;flex:1;font-size:15.5px;color:var(--muted)}
+.path .tlink{margin-top:18px}
+@media (hover:hover){.path:hover{border-color:var(--sun);box-shadow:0 20px 40px -26px rgba(31,95,150,.4);transform:translateY(-3px)}}
+
+/* ---------- Developers ---------- */
+.developers{background:var(--stone)}
+.developers .col-a{grid-column:span 6}.developers .col-b{grid-column:8/span 5}
+.assess{padding:36px;border-radius:24px;background:#fff;border:1px solid var(--line)}
+.assess h3{font-family:var(--display);font-weight:400;font-size:24px;color:var(--ink)}
+.assess ul{list-style:none;margin-top:12px}
+.assess li{display:flex;gap:16px;padding:20px 0;border-top:1px solid var(--line)}
+.assess li:first-child{border-top:0}
+.assess li svg{color:var(--sun-text);margin-top:2px}
+.assess h4{font-size:16px;font-weight:600;color:var(--ink)}
+.assess p{margin-top:4px;font-size:15px;color:var(--muted)}
+.drawer a.minor{font-family:var(--sans);font-size:17px;font-weight:600;color:var(--muted);border-bottom:0;padding:6px 0}
+.drawer a.minor:first-of-type{margin-top:16px}
+
+@media (max-width:1279px){.menu{gap:28px}}
+@media (max-width:1023px){
+  .panel-copy,.paths{grid-column:1/-1}
+  .panel-copy h3{max-width:none}
+  .paths{margin-top:12px}
+  .developers .col-a,.developers .col-b{grid-column:1/-1}
+  .developers .col-b{margin-top:40px}
+}
+@media (max-width:767px){
+  .tabs{display:flex;width:100%;margin-top:28px}
+  .tab{flex:1;min-width:0;padding:0 8px}
+  .panels{margin-top:28px}
+  .paths{grid-template-columns:1fr;gap:14px}
+  .path{padding:24px 22px}
+  .assess{padding:26px 22px}
+  .drawer{gap:0;overflow-y:auto}
+  .drawer a{font-size:30px}
+}
+
+
+/* ---------- Developer partners strip (home page) ---------- */
+.partners{overflow:hidden;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0}
+.partners .wrap{display:grid;grid-template-columns:minmax(150px,210px) minmax(0,1fr);align-items:center;gap:36px}
+.partners-title{font-family:var(--sans);font-size:15px;line-height:1.45;font-weight:600;color:var(--ink)}
+.partners-marquee{min-width:0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.partners-track{display:flex;width:max-content;align-items:center;animation:partnerMarquee 26s linear infinite;will-change:transform}
+.partners-list{flex:none;list-style:none;display:flex;align-items:center;gap:52px;padding-right:52px}
+.partners-list li{display:flex;align-items:center;justify-content:center;width:128px;height:46px;flex:none}
+.partners-list img{display:block;width:auto;max-width:128px;max-height:34px;object-fit:contain;filter:grayscale(1);opacity:.7;transition:filter var(--med),opacity var(--med)}
+.partners-list img.logo-invert{filter:invert(1) grayscale(1)}
+@keyframes partnerMarquee{to{transform:translateX(-50%)}}
+@media (hover:hover){.partners-marquee:hover .partners-track{animation-play-state:paused}.partners-list li:hover img{filter:grayscale(0);opacity:1}.partners-list li:hover img.logo-invert{filter:invert(1) grayscale(1)}}
+@media (max-width:767px){.partners{padding:22px 0}.partners .wrap{grid-template-columns:1fr;gap:14px}.partners-title{text-align:center}.partners-list{gap:34px;padding-right:34px}.partners-list li{width:112px;height:38px}.partners-list img{max-width:112px;max-height:30px}}
+@media (prefers-reduced-motion:reduce){.partners-track{animation-duration:80s}}
+
+
+/* ---------- Area guide directory ---------- */
+.sub-h{margin-top:56px;font-family:var(--sans);font-size:15px;font-weight:600;color:var(--ink)}
+.sub-h+.mosaic{margin-top:16px}
+.guide{margin-top:72px;padding-top:56px;border-top:1px solid var(--line)}
+.guide-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px}
+.search{position:relative;flex:0 1 340px}
+.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.search input{width:100%;min-height:50px;padding:0 18px 0 46px;border:1.5px solid var(--line-strong);border-radius:999px;background:#fff;font:inherit;font-size:16px;color:var(--text);transition:border-color var(--fast),box-shadow var(--med)}
+.search input:focus{outline:none;border-color:var(--sun-text);box-shadow:0 0 0 4px rgba(142,197,240,.4)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:14.5px;font-weight:600;color:var(--text);transition:background-color var(--fast),border-color var(--fast),color var(--fast)}
+.chip:hover{border-color:var(--sun-text)}
+.chip[aria-pressed="true"]{background:var(--sun);border-color:var(--sun);color:var(--ink)}
+.guide-count{margin-top:24px;font-size:14px;color:var(--muted)}
+.areas-list{list-style:none;margin-top:16px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.areas-list li[hidden]{display:none}
+.areas-list a{position:relative;display:flex;flex-direction:column;height:100%;padding:22px 52px 22px 22px;border-radius:16px;border:1px solid var(--line);background:#fff;text-decoration:none;color:inherit;transition:border-color var(--med),box-shadow var(--med) var(--ease),transform var(--med) var(--ease-out)}
+.areas-list h3{font-family:var(--display);font-weight:400;font-size:20px;line-height:1.25;color:var(--ink)}
+.areas-list p{margin-top:6px;font-size:14.5px;line-height:1.5;color:var(--muted)}
+.atags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.atags span{padding:2px 9px;border-radius:4px;background:var(--stone);font-size:12px;font-weight:600;color:var(--glass-text)}
+.go2{position:absolute;right:20px;top:24px;color:var(--sun-text);transition:transform var(--med) var(--ease-out)}
+@media (hover:hover){.areas-list a:hover{border-color:var(--sun);box-shadow:0 16px 32px -24px rgba(31,95,150,.45);transform:translateY(-2px)}.areas-list a:hover .go2{transform:translateX(4px)}}
+.areas-list a:active{transform:scale(.99)}
+.areas-list.is-collapsed li:nth-child(n+13){display:none}
+.more-wrap{display:flex;justify-content:center;margin-top:28px}
+.more-wrap[hidden]{display:none}
+.guide-empty{margin-top:24px;padding:24px;border-radius:16px;background:var(--stone);color:var(--text)}
+.guide-empty a{color:var(--sun-text);font-weight:600}
+@media (max-width:1180px){.menu{gap:20px}.menu a{font-size:14.5px}}
+@media (max-width:1023px){.areas-list{grid-template-columns:1fr 1fr}.search{flex:1 1 100%}}
+@media (max-width:767px){
+  .guide{margin-top:48px;padding-top:40px}
+  .chips{flex-wrap:nowrap;overflow-x:auto;margin-inline:calc(-1*var(--pad));padding:2px var(--pad);scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto}
+  .areas-list{grid-template-columns:1fr;gap:10px}
+  .areas-list a{padding:18px 48px 18px 18px}
+  .areas-list h3{font-size:19px}
+}
+
+
+/* ---------- Lifestyle collections ---------- */
+.collections{margin-top:56px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.collection{display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:28px 24px 24px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(180deg,#FFFFFF,var(--stone));cursor:pointer;font:inherit;color:var(--text);transition:border-color var(--med),box-shadow var(--med) var(--ease),transform var(--med) var(--ease-out)}
+.c-ico{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid var(--line);color:var(--sun-text)}
+.c-title{margin-top:20px;font-family:var(--display);font-size:23px;line-height:1.2;color:var(--ink)}
+.c-line{margin-top:8px;font-size:15px;color:var(--muted)}
+.c-ex{margin-top:12px;font-size:13.5px;color:var(--glass-text)}
+.c-count{margin-top:auto;padding-top:20px;display:inline-flex;align-items:center;gap:6px;font-size:14.5px;font-weight:600;color:var(--sun-text)}
+.c-count svg{transition:transform var(--med) var(--ease-out)}
+@media (hover:hover){.collection:hover{border-color:var(--sun);box-shadow:0 18px 36px -26px rgba(31,95,150,.45);transform:translateY(-3px)}.collection:hover .c-count svg{transform:translateX(4px)}}
+.collection:active{transform:scale(.99)}
+
+/* directory cards with photo slot */
+.areas-list a{padding:0;overflow:hidden}
+.thumb{position:relative;height:120px;overflow:hidden;background:linear-gradient(160deg,var(--g1),var(--g2))}
+.thumb svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:auto}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 700ms var(--ease),transform 900ms var(--ease-out)}
+.thumb img.is-loaded{opacity:1}
+@media (hover:hover){.areas-list a:hover .thumb img{transform:scale(1.04)}}
+.acard{padding:18px 52px 20px 20px;display:flex;flex-direction:column;flex:1}
+.go2{top:auto;bottom:22px}
+
+/* ---------- Community page ---------- */
+.apage{position:fixed;inset:0;z-index:97;overflow-y:auto;overscroll-behavior:contain;background:#fff;padding-top:var(--header-h);animation:pageIn 360ms var(--ease-out)}
+.apage[hidden]{display:none}
+@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+body.page-open{overflow:hidden}
+body.page-open .header{background:rgba(255,255,255,.96);box-shadow:0 1px 0 var(--line)}
+.ap-hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#FFFFFF,#EEF6FD 55%,#D9EBF9);padding:48px 0 0}
+.ap-hero .wrap{position:relative;z-index:1}
+.ap-back{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:15px;font-weight:600;color:var(--sun-text);text-decoration:none;background:none;border:0;cursor:pointer;padding:0}
+.ap-back:hover{color:var(--ink)}
+#ap-title:focus{outline:none}
+.ap-hero h1{margin-top:20px;font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,5vw,4rem);line-height:1.06;color:var(--ink);max-width:16ch}
+.ap-hero .ap-short{margin-top:16px;font-size:clamp(1.05rem,1.5vw,1.3rem);color:var(--text);max-width:40ch}
+.ap-meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ap-meta span{padding:4px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13.5px;font-weight:600;color:var(--glass-text)}
+.ap-art{position:relative;height:170px;margin-top:40px}
+.ap-art svg{position:absolute;left:0;bottom:0;width:100%;height:100%}
+.ap-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 700ms var(--ease)}
+.ap-art img.is-loaded{opacity:1}
+.ap-body{padding:72px 0 96px}
+.ap-body .grid{align-items:start}
+.ap-main{grid-column:span 7}
+.ap-aside{grid-column:9/span 4;position:sticky;top:calc(var(--header-h) + 24px)}
+.ap-sec+.ap-sec{margin-top:44px;padding-top:44px;border-top:1px solid var(--line)}
+.ap-sec h2{font-family:var(--display);font-weight:400;font-size:28px;color:var(--ink)}
+.ap-sec p{margin-top:12px;color:var(--text);max-width:60ch}
+.ap-sec .ticks{margin-top:18px}
+.ap-facts{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.ap-facts h3{font-size:14px;font-weight:600;color:var(--sun-text)}
+.ap-facts p{margin-top:6px;font-size:16px}
+.ap-cta{padding:30px 28px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(180deg,#fff,var(--stone))}
+.ap-cta h2{font-family:var(--display);font-weight:400;font-size:24px;line-height:1.25;color:var(--ink)}
+.ap-cta p{margin-top:8px;font-size:15px;color:var(--muted)}
+.ap-cta .btn{width:100%;margin-top:14px}
+.ap-cta .btn:first-of-type{margin-top:22px}
+.ap-note{margin-top:14px;font-size:12.5px;color:var(--muted)}
+.ap-more{margin-top:72px;padding-top:56px;border-top:1px solid var(--line)}
+.ap-more h2{font-family:var(--display);font-weight:400;font-size:28px;color:var(--ink)}
+.ap-more .areas-list{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:24px}
+.ap-disclaimer{margin-top:40px;font-size:13px;color:var(--muted);max-width:70ch}
+
+@media (max-width:1023px){
+  .collections{grid-template-columns:1fr 1fr}
+  .ap-main,.ap-aside{grid-column:1/-1}
+  .ap-aside{position:static;margin-top:48px}
+  .ap-more .areas-list{grid-template-columns:1fr 1fr}
+}
+@media (max-width:767px){
+  .collections{margin-top:36px;grid-template-columns:1fr 1fr;gap:10px}
+  .collection{padding:20px 16px 18px;border-radius:16px}
+  .c-ico{width:38px;height:38px}
+  .c-title{margin-top:14px;font-size:19px}
+  .c-line,.c-ex{display:none}
+  .c-count{padding-top:12px;font-size:13.5px}
+  .thumb{height:96px}
+  .ap-hero{padding-top:28px}
+  .ap-art{height:120px;margin-top:28px}
+  .ap-body{padding:48px 0 120px}
+  .ap-facts{grid-template-columns:1fr;gap:20px}
+  .ap-sec+.ap-sec{margin-top:32px;padding-top:32px}
+  .ap-more .areas-list{grid-template-columns:1fr}
+}
+
+/* =====================================================================
+   WHITE + LIGHT BLUE THEME
+   Grounds are white and light blue; text is deep navy for readability.
+   ===================================================================== */
+.dark :focus-visible,.hero :focus-visible{outline-color:var(--focus)}
+.btn-sun:hover{box-shadow:0 12px 30px -14px rgba(31,95,150,.45)}
+.btn-bay{background:#fff;color:var(--ink);border-color:var(--glass)}
+.btn-bay:hover{background:var(--stone);border-color:var(--sun-text);box-shadow:none}
+.btn-outline:hover{background:var(--stone);color:var(--ink);border-color:var(--sun-text)}
+.btn-ghost{border-color:var(--line-strong);color:var(--ink);background:rgba(255,255,255,.6)}
+.btn-ghost:hover{border-color:var(--sun-text);background:#fff}
+
+.header{color:var(--ink)}
+.header.is-solid{background:rgba(255,255,255,.9);box-shadow:0 1px 0 var(--line),0 10px 30px -20px rgba(14,43,71,.25)}
+.logo{color:var(--ink)}.logo small{color:var(--muted)}
+.menu a{color:var(--text)}.menu a:hover,.menu a.is-active{color:var(--ink)}
+.menu a::after{background:var(--sun-text)}
+.nav-phone{color:var(--ink)}
+.burger span{background:var(--ink)}
+.drawer{background:var(--tide)}
+.drawer a{color:var(--ink);border-bottom-color:var(--line)}
+
+.hero{color:var(--ink);background:linear-gradient(180deg,#FFFFFF 0%,#EEF6FD 45%,#D9EBF9 88%)}
+.hero .sub{color:var(--text)}
+.proof{color:var(--text)}.proof svg{color:var(--sun-text)}
+.sheet{border:1px solid var(--line);box-shadow:0 30px 60px -34px rgba(31,95,150,.4)}
+.svc-bar{background:#fff;border-top:1px solid var(--line)}
+.svc-bar li{color:var(--text)}.svc-bar li svg{color:var(--sun-text)}
+
+.fees .foot{border-top-color:var(--line)}
+.ben{border-top-color:var(--line)}
+.frow:hover{background:#F7FBFE}
+
+.comm{color:var(--ink)}
+.comm::after{display:none}
+.comm .info{left:16px;right:16px;bottom:16px;padding:18px 20px;border-radius:16px;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.comm .tag{background:var(--stone);color:var(--ink)}
+.comm h3{color:var(--ink);font-size:28px;margin-top:8px}
+.comm p{color:var(--muted)}
+.comm .go{background:var(--sun);color:var(--ink)}
+.comm:hover .go{background:var(--sun-soft)}
+
+.dark{background:var(--bay);color:var(--ink)}
+.dark .h2{color:var(--ink)}.dark .lead{color:var(--muted)}
+.process::before{background:#fff;opacity:.6}
+.steps::before{background:rgba(31,95,150,.22)}
+.steps::after{background:var(--sun-text)}
+.steps .dot{background:var(--bay);border-color:var(--line-strong)}
+.steps.is-in .dot{background:var(--sun-text);border-color:var(--sun-text)}
+.steps .num{color:var(--sun-text)}
+.steps h3{color:var(--ink)}.steps p{color:var(--text)}
+
+.feat{background:var(--bay);color:var(--ink)}
+.feat .qm{color:var(--sun-text)}.feat figcaption{color:var(--muted)}.feat figcaption b{color:var(--ink)}
+.feat .disc{background:#fff}
+
+.finale{background:var(--tide);color:var(--ink)}
+.sky{background:linear-gradient(180deg,#D9EBF9,#F4F9FE)}
+.sky .h2{color:var(--ink)}.sky .lead{color:var(--muted)}
+.sky .sun2{background:#fff;box-shadow:0 0 0 36px rgba(255,255,255,.35),0 0 0 72px rgba(255,255,255,.18)}
+.contact .h2{color:var(--ink)}.contact .intro-p{color:var(--muted)}
+.cdetails li{color:var(--muted);border-top-color:var(--line)}
+.cdetails svg{color:var(--sun-text)}.cdetails b{color:var(--ink)}
+.cdetails a:hover{color:var(--sun-text)}
+.form{border:1px solid var(--line);box-shadow:0 30px 60px -40px rgba(31,95,150,.35)}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--sun-text);box-shadow:0 0 0 4px rgba(142,197,240,.4)}
+.sent{background:var(--sun-wash);color:var(--sun-text)}
+
+.footer{background:var(--tide-2);color:var(--muted)}
+.footer h4{color:var(--ink)}
+.footer a:hover{color:var(--sun-text)}
+.legal{border-top-color:var(--line);color:var(--muted)}
+
+.wa{background:var(--sun);box-shadow:0 10px 30px rgba(31,95,150,.3)}
+.wa svg{fill:var(--ink)}
+.wa .tip{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.actionbar{background:rgba(255,255,255,.94);border-top-color:var(--line)}
+.actionbar a{color:var(--ink);background:var(--stone)}
+.actionbar a:active{background:var(--bay)}
+.actionbar a.book{background:var(--sun);color:var(--ink)}
+@media (max-width:767px){.steps .num{background:var(--bay);border-color:var(--sun-text)}}
+
+/* ---------- Reduced motion: everything calm ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:1ms!important;animation-delay:0ms!important;animation-iteration-count:1!important;transition-duration:1ms!important;transition-delay:0ms!important}
+  .js [data-reveal]{opacity:1;transform:none;clip-path:none}
+}
+
+/* Requested photographic opening panel */
+.hero-photo{grid-column:9/span 4;align-self:center;height:min(500px,58vh);min-height:360px;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.55);animation:sheetIn 1s var(--ease-out) both .9s}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
+@media (max-width:1024px){.hero{min-height:100svh}.hero-body{padding-bottom:40px}.hero-copy{grid-column:span 7}.hero-photo{grid-column:8/span 5;height:400px;min-height:0}.hero h1{font-size:clamp(2.45rem,5.7vw,3.4rem)}}
+@media (max-width:767px){.hero{height:auto;min-height:100svh}.hero-body{display:flex;min-height:100svh;padding-top:calc(var(--header-h) + 20px);padding-bottom:28px}.hero-copy{width:100%}.hero-photo{display:none}.hero h1{font-size:clamp(2.35rem,11vw,3.05rem)}.hero .sub{margin-top:18px}.hero .ctas{margin-top:24px}.proof{margin-top:22px}.svc-bar{display:none}}
+
+/* ===== Reference hero + quote (v2.0.3) ===== */
+:root{--serif:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;--hx-blue:#1D5C99;--hx-ink:#14202E}
+.header,.header.is-solid{background:rgba(255,255,255,.96);color:var(--hx-ink);box-shadow:0 1px 0 #E3EAF1;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.header .logo{color:var(--hx-ink)}
+.header .logo b{font-family:var(--serif);font-size:23px;letter-spacing:0}
+.header .logo small{font-size:8.5px;letter-spacing:.32em;color:#7C8B9B;margin-top:3px}
+.header .menu{gap:30px}
+.header .menu a{color:#3A4756;font-size:13px;font-weight:500;letter-spacing:.02em}
+.header .menu a:hover{color:var(--hx-ink)}
+.header .menu a::after{background:var(--hx-blue);height:1px}
+.nav-contact{display:inline-flex;align-items:center;min-height:42px;padding:0 22px;background:var(--hx-blue);color:#fff;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.03em;border-radius:2px;transition:background .2s}
+.nav-contact:hover{background:#164A7D}
+.header .burger span{background:var(--hx-ink)}
+.hx{background:linear-gradient(180deg,#FFFFFF 0%,#F6F9FC 60%,#EEF4FA 100%);color:var(--hx-ink);min-height:min(100svh,900px)}
+.hx .hero-body{padding-top:calc(var(--header-h) + 28px);padding-bottom:48px;align-items:center}
+.hx .hero-copy{grid-column:1/span 7}
+.hx-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:#5D6B7A;margin-bottom:18px;animation:fadeUp .8s var(--ease-out) both .1s}
+.hx h1{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,min(6.4vw,9.4vh),6.4rem);line-height:.98;letter-spacing:-.015em;color:var(--hx-ink)}
+.hx h1 .line{display:block;padding-bottom:.04em}
+.hx h1 em{font-style:italic;color:var(--hx-blue)}
+.hx .sub{margin-top:26px;max-width:30em;font-size:15.5px;line-height:1.7;color:#4A5867}
+.hx .ctas{margin-top:28px;gap:12px}
+.hx-btn{display:inline-flex;align-items:center;gap:12px;min-height:50px;padding:0 26px;font-size:13px;font-weight:600;letter-spacing:.04em;text-decoration:none;border-radius:2px;transition:background .2s,color .2s,border-color .2s}
+.hx-btn-solid{background:var(--hx-blue);color:#fff;border:1px solid var(--hx-blue)}
+.hx-btn-solid:hover{background:#164A7D}
+.hx-btn-line{background:#fff;color:var(--hx-ink);border:1px solid #B9C4CF}
+.hx-btn-line:hover{border-color:var(--hx-ink)}
+.hx-stats{display:flex;flex-wrap:wrap;gap:14px 34px;list-style:none;margin-top:38px}
+.hx-stats b{display:block;font-family:var(--serif);font-weight:400;font-size:17px;color:var(--hx-ink)}
+.hx-stats span{display:block;font-size:11px;color:#7C8B9B;margin-top:2px}
+.hx .hero-photo{grid-column:9/span 4}
+.hx-quote{background:#fff;padding:clamp(72px,10vw,128px) 0;text-align:center;border-top:1px solid #EDF2F7}
+.hx-arch{width:44px;height:26px;color:#9AA8B6;margin:0 auto 26px;display:block}
+.hx-quote blockquote{max-width:24em;margin:0 auto;font-family:var(--serif);font-weight:400;font-size:clamp(1.55rem,2.6vw,2.35rem);line-height:1.4;color:var(--hx-ink);text-wrap:balance}
+.hx-quote em{font-style:italic;color:var(--hx-blue)}
+.hx-cap{margin-top:26px;font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:#8A97A5}
+@media (max-width:1024px){.hx .hero-copy{grid-column:1/span 7}.hx .hero-photo{grid-column:8/span 5}.hx h1{font-size:clamp(3rem,7vw,4.8rem)}}
+@media (max-width:767px){.hx{min-height:auto}.hx .hero-body{display:block;min-height:0;padding-top:calc(var(--header-h) + 28px);padding-bottom:48px}.hx h1{font-size:clamp(2.9rem,14vw,3.8rem)}.hx h1 .line,.hx h1 .line>span{display:block}.hx .ctas{flex-direction:column;align-items:stretch}.hx-btn{justify-content:center}.hx-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}.nav-contact{display:none}}
+</style>
+<script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="assets/csv-updates.css?v=3.0.1">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-tower" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="1"/><path d="M10 7h1M13 7h1M10 11h1M13 11h1M10 15h1M13 15h1"/></symbol><symbol id="i-home" viewBox="0 0 24 24"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/></symbol><symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 20h18M5 16l5-5 3 3 6-7"/><path d="M15 7h4v4"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></symbol><symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19.1L4 20z"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol></defs></svg>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header" id="header">
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="Solara Bay Real Estate, back to top"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 34V20a12 12 0 0 1 24 0v14" fill="none" stroke="#14202E" stroke-width="1.6"/><circle cx="20" cy="21" r="4.2" fill="#1D5C99"/><path d="M5 34h30" stroke="#14202E" stroke-width="1.6"/></svg><span><b>Solara Bay</b><small>REAL ESTATE &middot; DUBAI</small></span></a>
+    <nav aria-label="Main"><ul class="menu"><li><a href="#about">About Us</a></li><li><a href="#services">Services</a></li><li><a href="latest-launches.html">Latest Launches</a></li><li><a href="#area-guide">Area Guide</a></li><li><a href="golden-visa.html">Golden Visa</a></li><li><a href="careers.html">Careers</a></li></ul></nav>
+    <div class="nav-end">
+      <a href="#contact" class="nav-contact">Contact</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer" aria-hidden="true"><a href="#about" style="--i:0">About Us</a><a href="#services" style="--i:1">Services</a><a href="latest-launches.html" style="--i:2">Latest Launches</a><a href="#area-guide" style="--i:3">Area Guide</a><a href="golden-visa.html" style="--i:4">Golden Visa</a><a href="careers.html" style="--i:5">Careers</a><a href="#contact" class="btn btn-sun" style="--i:6">Contact</a></div>
+<main id="main">
+<section class="hero hx" id="top">
+  <div class="wrap hero-body">
+    <div class="hero-copy">
+      <p class="hx-eyebrow">Licensed by the DLD | Licence 1656071 | ORN 64706</p>
+      <h1 aria-label="Dubai property, thoughtfully advised"><span class="line" aria-hidden="true"><span style="--i:0">Dubai property,</span></span><span class="line" aria-hidden="true"><span style="--i:1"><em>thoughtfully</em> advised</span></span></h1>
+      <div class="intro">
+        <p class="sub" style="--i:0">We guide buyers, sellers, landlords, investors and tenants through every step, with clear numbers and honest advice.</p>
+        <div class="ctas" style="--i:1"><a href="#contact" class="hx-btn hx-btn-solid">Book a free consultation <svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a><a href="https://wa.me/971561815038" class="hx-btn hx-btn-line js-wa" data-msg="Hello Solara Bay, I have a property question."><svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-chat"/></svg>Chat on WhatsApp</a></div>
+        <ul class="hx-stats" style="--i:2"><li><a href="#buy" data-tab="buy"><b>Buy &amp; sell</b><span>Ready homes</span></a></li><li><a href="latest-launches.html"><b>Off plan</b><span>New launches</span></a></li><li><a href="#rent" data-tab="rent"><b>Leasing</b><span>Homes to rent</span></a></li><li><a href="golden-visa.html"><b>Golden Visa</b><span>Residency advice</span></a></li></ul>
+      </div>
+    </div>
+    <figure class="hero-photo" aria-label="Dubai waterfront real estate"><img src="images/hero-panel.jpg" alt="Modern Dubai Marina home with a waterfront skyline view"></figure>
+  </div>
+</section>
+
+<section class="hx-quote" aria-label="Founder note"><div class="wrap">
+  <svg class="hx-arch" viewBox="0 0 48 28" aria-hidden="true"><path d="M4 26a20 20 0 0 1 40 0" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M2 26h44" stroke="currentColor" stroke-width="1.4"/></svg>
+  <blockquote>Starting the company comes from a genuine passion for Dubai's real estate market and, most importantly, for working with people. Our aim is simple, to understand our clients, provide honest guidance, and make the property journey as clear and comfortable as possible. We are building this company one relationship at a time, with the hope that every client we work with feels comfortable, valued, and confident in their decisions. Thank you for trusting us to be part of your journey.</blockquote>
+  <p class="hx-cap">The Solara Bay Team</p>
+</div></section>
+
+<section class="partners" aria-labelledby="partners-title"><div class="wrap">
+  <h2 id="partners-title" class="partners-title">Partnered with Dubai's leading developers</h2>
+  <div class="partners-marquee"><div class="partners-track">
+    <ul class="partners-list"><li><img src="/__l5e/assets-v1/adf2c2dd-09df-4cf2-af96-2ef340f1570c/emaar.svg" alt="Emaar"></li>
+      <li><img src="/__l5e/assets-v1/7c92db88-0027-4ee5-8e01-c462d1b0a38d/damac.png" alt="DAMAC Properties"></li>
+      <li><img src="/__l5e/assets-v1/3e93958c-a150-4edc-93a0-3bb26be119b6/sobha-realty.svg" alt="Sobha Realty"></li>
+      <li><img class="logo-invert" src="/__l5e/assets-v1/c66a5733-b007-4ce7-9e46-dd3157cd5795/nakheel.svg" alt="Nakheel"></li>
+      <li><img src="/__l5e/assets-v1/a661a162-6c27-489a-b70a-6e1305bfec97/meraas.svg" alt="Meraas"></li>
+      <li><img src="/__l5e/assets-v1/b19abe72-73c9-4371-98b1-2654522cb221/ellington.png" alt="Ellington Properties"></li>
+      <li><img class="logo-invert" src="/__l5e/assets-v1/cb04a659-3ed3-4066-a466-7a0f29d90815/binghatti.svg" alt="Binghatti"></li>
+      <li><img src="/__l5e/assets-v1/a9d501b7-9e44-42e4-ad32-1030734ace56/danube.png" alt="Danube Properties"></li></ul>
+    <ul class="partners-list" aria-hidden="true"><li><img src="/__l5e/assets-v1/adf2c2dd-09df-4cf2-af96-2ef340f1570c/emaar.svg" alt=""></li>
+      <li><img src="/__l5e/assets-v1/7c92db88-0027-4ee5-8e01-c462d1b0a38d/damac.png" alt=""></li>
+      <li><img src="/__l5e/assets-v1/3e93958c-a150-4edc-93a0-3bb26be119b6/sobha-realty.svg" alt=""></li>
+      <li><img class="logo-invert" src="/__l5e/assets-v1/c66a5733-b007-4ce7-9e46-dd3157cd5795/nakheel.svg" alt=""></li>
+      <li><img src="/__l5e/assets-v1/a661a162-6c27-489a-b70a-6e1305bfec97/meraas.svg" alt=""></li>
+      <li><img src="/__l5e/assets-v1/b19abe72-73c9-4371-98b1-2654522cb221/ellington.png" alt=""></li>
+      <li><img class="logo-invert" src="/__l5e/assets-v1/cb04a659-3ed3-4066-a466-7a0f29d90815/binghatti.svg" alt=""></li>
+      <li><img src="/__l5e/assets-v1/a9d501b7-9e44-42e4-ad32-1030734ace56/danube.png" alt=""></li></ul>
+  </div></div>
+</div></section>
+<section class="section" id="services"><span id="buy" class="anchor"></span><span id="sell" class="anchor"></span><span id="rent" class="anchor"></span><div class="wrap">
+<div class="split-head"><h2 class="h2" data-reveal>How can we help you?</h2><p class="lead" data-reveal style="--i:1"></p></div>
+<div class="tabs" role="tablist" aria-label="Services" data-reveal style="--i:1"><button class="tab" role="tab" id="tab-buy" aria-controls="panel-buy" aria-selected="true" tabindex="0">Buy</button><button class="tab" role="tab" id="tab-sell" aria-controls="panel-sell" aria-selected="false" tabindex="-1">Sell</button><button class="tab" role="tab" id="tab-rent" aria-controls="panel-rent" aria-selected="false" tabindex="-1">Rent</button><span class="tab-ink" aria-hidden="true"></span></div>
+<div class="panels" data-reveal style="--i:2"><div class="panel" id="panel-buy" role="tabpanel" aria-labelledby="tab-buy" tabindex="0">
+  <div class="panel-copy"><h3>Buy with the full picture, not the brochure.</h3><p>Whether it's a new launch or a home you can move into next month, you see real prices, costs and rents before you commit.</p><ul class="ticks"><li><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg><span>Price checked against recent DLD transactions</span></li><li><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg><span>Every cost itemised, including the 4% transfer fee</span></li><li><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg><span>Video viewings and digital signing for overseas buyers</span></li></ul></div>
+  <div class="paths"><article class="path"><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-tower"/></svg><h4>Off plan</h4><p>New launches compared side by side: delivery record, price per square foot and what the payment plan asks of you each year.</p><a href="#contact" class="tlink" data-intent="Buy off plan">Explore off plan options <svg class="ico" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a></article><article class="path"><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-home"/></svg><h4>Ready homes</h4><p>Verified listings only, a negotiator on your side, and a managed transfer from offer to title deed.</p><a href="#contact" class="tlink" data-intent="Buy a ready property">Find a ready home <svg class="ico" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a></article></div>
+</div><div class="panel" id="panel-sell" role="tabpanel" aria-labelledby="tab-sell" tabindex="0" hidden>
+  <div class="panel-copy"><h3>Sell at the right price, to serious buyers.</h3><p>We price your property from real transactions, market it properly, and only bring you buyers who are ready to proceed.</p><ul class="ticks"><li><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg><span>Valuation based on recent sales in your building</span></li><li><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg><span>Professional photos and permit-compliant listings</span></li><li><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg><span>2% commission, payable only when you sell</span></li></ul></div>
+  <div class="paths"><article class="path"><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-chart"/></svg><h4>Know your price</h4><p>A written valuation with the comparable sales behind it, so you can list with confidence rather than guesswork.</p><a href="#contact" class="tlink" data-intent="Sell a property">Request a valuation <svg class="ico" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a></article><article class="path"><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-key"/></svg><h4>Sell with less hassle</h4><p>We handle viewings, offers, the NOC, the trustee office and the transfer. You approve decisions, we do the running.</p><a href="#contact" class="tlink" data-intent="Sell a property">Plan your sale <svg class="ico" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a></article></div>
+</div><div class="panel" id="panel-rent" role="tabpanel" aria-labelledby="tab-rent" tabindex="0" hidden>
+  <div class="panel-copy"><h3>Rent without the runaround.</h3><p>Landlords get vetted tenants, and we collect and follow up on rent for them. Tenants get a shortlist that actually fits.</p><ul class="ticks"><li><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg><span>Tenants referenced and documented before viewing</span></li><li><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg><span>Ejari, contracts and cheques handled for both sides</span></li><li><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg><span>Optional full management for owners abroad</span></li></ul></div>
+  <div class="paths"><article class="path"><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-key"/></svg><h4>For landlords</h4><p>Qualified tenants, usually within weeks, and full property management if you'd rather not be involved at all.</p><a href="#contact" class="tlink" data-intent="Let my property">Let my property <svg class="ico" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a></article><article class="path"><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-home"/></svg><h4>For tenants</h4><p>Homes that fit your budget, commute and move-in date, with viewings arranged around your schedule.</p><a href="#contact" class="tlink" data-intent="Rent a home">Find a rental <svg class="ico" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a></article></div>
+</div></div>
+</div></section>
+
+
+
+<section class="section" id="area-guide"><span id="communities" class="anchor"></span><div class="wrap">
+<div class="head-row"><div><p class="kicker" data-reveal>Area guide</p><h2 class="h2" data-reveal>Dubai's top communities, explained.</h2><p class="lead" data-reveal style="--i:1">Where to buy, rent or invest, from waterfront towers to family villa communities. Browse by lifestyle, or open any community for a full guide to living and investing there.</p></div></div>
+<div class="collections" role="group" aria-label="Browse by lifestyle"><button type="button" class="collection" data-collect="w" data-reveal style="--i:0"><span class="c-ico"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg></span><span class="c-title">Waterfront living</span><span class="c-line">Beaches, marinas and canal-side homes.</span><span class="c-ex">Business Bay, Dubai Marina, Jumeirah Beach Residence and more</span><span class="c-count">11 communities <svg class="ico" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></span></button><button type="button" class="collection" data-collect="v" data-reveal style="--i:1"><span class="c-ico"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg></span><span class="c-title">Family villa communities</span><span class="c-line">Space, gardens, parks and schools nearby.</span><span class="c-ex">Palm Jumeirah, Dubai Hills Estate, Arabian Ranches and more</span><span class="c-count">27 communities <svg class="ico" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></span></button><button type="button" class="collection" data-collect="a" data-reveal style="--i:2"><span class="c-ico"><svg class="ico" aria-hidden="true"><use href="#i-tower"/></svg></span><span class="c-title">City living</span><span class="c-line">Walkable districts close to work and dining.</span><span class="c-ex">Downtown Dubai, Business Bay, Dubai Marina and more</span><span class="c-count">20 communities <svg class="ico" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></span></button><button type="button" class="collection" data-collect="n" data-reveal style="--i:3"><span class="c-ico"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg></span><span class="c-title">New launches to watch</span><span class="c-line">Off plan communities with payment plans.</span><span class="c-ex">Arabian Ranches 3, Tilal Al Ghaf, Dubai Creek Harbour and more</span><span class="c-count">12 communities <svg class="ico" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></span></button></div>
+
+<div class="guide">
+  <div class="guide-bar" data-reveal>
+    <label class="search"><span class="sr-only">Search communities</span><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-search"/></svg><input type="search" id="area-search" placeholder="Search communities" autocomplete="off"></label>
+    <div class="chips" role="group" aria-label="Filter communities"><button type="button" class="chip" data-filter="all" aria-pressed="true">All</button><button type="button" class="chip" data-filter="a" aria-pressed="false">Apartments</button><button type="button" class="chip" data-filter="v" aria-pressed="false">Villas and townhouses</button><button type="button" class="chip" data-filter="w" aria-pressed="false">Waterfront</button><button type="button" class="chip" data-filter="n" aria-pressed="false">New launches</button></div>
+  </div>
+  <p class="guide-count" id="area-count" aria-live="polite">Showing all 36 communities</p>
+  <ul class="areas-list is-collapsed" id="areas-list"><li data-tags="a" data-name="downtown dubai"><a href="area/downtown-dubai.html" data-slug="downtown-dubai"><div class="thumb" style="--g1:#EAF4FC;--g2:#A9D0F0"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/downtown-dubai.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Downtown Dubai</h3><p>Apartments around Burj Khalifa and Dubai Mall</p><span class="atags"><span>Apartments</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a w" data-name="business bay"><a href="area/business-bay.html" data-slug="business-bay"><div class="thumb" style="--g1:#F2F8FE;--g2:#B7DBF7"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/business-bay.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Business Bay</h3><p>Canal-side apartments next to Downtown</p><span class="atags"><span>Apartments</span><span>Waterfront</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a w" data-name="dubai marina"><a href="area/dubai-marina.html" data-slug="dubai-marina"><div class="thumb" style="--g1:#E3F0FB;--g2:#9FC9EC"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/dubai-marina.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Dubai Marina</h3><p>Waterfront towers with year-round rental demand</p><span class="atags"><span>Apartments</span><span>Waterfront</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a w" data-name="jumeirah beach residence (jbr)"><a href="area/jumeirah-beach-residence-jbr.html" data-slug="jumeirah-beach-residence-jbr"><div class="thumb" style="--g1:#EEF6FD;--g2:#BFDDF5"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/jumeirah-beach-residence-jbr.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Jumeirah Beach Residence (JBR)</h3><p>Beachfront apartments along The Walk</p><span class="atags"><span>Apartments</span><span>Waterfront</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a v w" data-name="palm jumeirah"><a href="area/palm-jumeirah.html" data-slug="palm-jumeirah"><div class="thumb" style="--g1:#E6F2FC;--g2:#AFD3F1"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/palm-jumeirah.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Palm Jumeirah</h3><p>Beachfront villas and apartments on the Palm</p><span class="atags"><span>Apartments</span><span>Villas</span><span>Waterfront</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a v" data-name="dubai hills estate"><a href="area/dubai-hills-estate.html" data-slug="dubai-hills-estate"><div class="thumb" style="--g1:#EAF4FC;--g2:#A9D0F0"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/dubai-hills-estate.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Dubai Hills Estate</h3><p>Villas, townhouses and apartments around a golf course</p><span class="atags"><span>Apartments</span><span>Villas</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="v" data-name="arabian ranches"><a href="area/arabian-ranches.html" data-slug="arabian-ranches"><div class="thumb" style="--g1:#F2F8FE;--g2:#B7DBF7"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/arabian-ranches.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Arabian Ranches</h3><p>Established family villas with a golf club</p><span class="atags"><span>Villas</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="v" data-name="arabian ranches 2"><a href="area/arabian-ranches-2.html" data-slug="arabian-ranches-2"><div class="thumb" style="--g1:#E3F0FB;--g2:#9FC9EC"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/arabian-ranches-2.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Arabian Ranches 2</h3><p>Newer villas and townhouses beside the original Ranches</p><span class="atags"><span>Villas</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="v n" data-name="arabian ranches 3"><a href="area/arabian-ranches-3.html" data-slug="arabian-ranches-3"><div class="thumb" style="--g1:#EEF6FD;--g2:#BFDDF5"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/arabian-ranches-3.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Arabian Ranches 3</h3><p>The newest phase of townhouses and villas</p><span class="atags"><span>Villas</span><span>New launches</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="v n" data-name="tilal al ghaf"><a href="area/tilal-al-ghaf.html" data-slug="tilal-al-ghaf"><div class="thumb" style="--g1:#E6F2FC;--g2:#AFD3F1"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/tilal-al-ghaf.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Tilal Al Ghaf</h3><p>Villas and townhouses around a swimmable lagoon</p><span class="atags"><span>Villas</span><span>New launches</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a w n" data-name="dubai creek harbour"><a href="area/dubai-creek-harbour.html" data-slug="dubai-creek-harbour"><div class="thumb" style="--g1:#EAF4FC;--g2:#A9D0F0"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/dubai-creek-harbour.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Dubai Creek Harbour</h3><p>Waterfront towers on Dubai Creek</p><span class="atags"><span>Apartments</span><span>Waterfront</span><span>New launches</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a w n" data-name="emaar beachfront"><a href="area/emaar-beachfront.html" data-slug="emaar-beachfront"><div class="thumb" style="--g1:#F2F8FE;--g2:#B7DBF7"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/emaar-beachfront.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Emaar Beachfront</h3><p>Beachfront towers between the Marina and the Palm</p><span class="atags"><span>Apartments</span><span>Waterfront</span><span>New launches</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a" data-name="city walk"><a href="area/city-walk.html" data-slug="city-walk"><div class="thumb" style="--g1:#E3F0FB;--g2:#9FC9EC"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/city-walk.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>City Walk</h3><p>Low-rise urban living with shops and dining</p><span class="atags"><span>Apartments</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a w" data-name="jumeirah lake towers (jlt)"><a href="area/jumeirah-lake-towers-jlt.html" data-slug="jumeirah-lake-towers-jlt"><div class="thumb" style="--g1:#EEF6FD;--g2:#BFDDF5"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/jumeirah-lake-towers-jlt.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Jumeirah Lake Towers (JLT)</h3><p>Lakeside towers with strong value</p><span class="atags"><span>Apartments</span><span>Waterfront</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a v" data-name="jumeirah village circle (jvc)"><a href="area/jumeirah-village-circle-jvc.html" data-slug="jumeirah-village-circle-jvc"><div class="thumb" style="--g1:#E6F2FC;--g2:#AFD3F1"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/jumeirah-village-circle-jvc.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Jumeirah Village Circle (JVC)</h3><p>Popular mid-market apartments and townhouses</p><span class="atags"><span>Apartments</span><span>Villas</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a v n" data-name="mohammed bin rashid city"><a href="area/mohammed-bin-rashid-city.html" data-slug="mohammed-bin-rashid-city"><div class="thumb" style="--g1:#EAF4FC;--g2:#A9D0F0"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/mohammed-bin-rashid-city.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Mohammed Bin Rashid City</h3><p>Luxury villas and apartments close to Downtown</p><span class="atags"><span>Apartments</span><span>Villas</span><span>New launches</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a v n" data-name="sobha hartland"><a href="area/sobha-hartland.html" data-slug="sobha-hartland"><div class="thumb" style="--g1:#F2F8FE;--g2:#B7DBF7"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/sobha-hartland.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Sobha Hartland</h3><p>Gated green community of villas and apartments</p><span class="atags"><span>Apartments</span><span>Villas</span><span>New launches</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="v" data-name="emirates hills"><a href="area/emirates-hills.html" data-slug="emirates-hills"><div class="thumb" style="--g1:#E3F0FB;--g2:#9FC9EC"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/emirates-hills.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Emirates Hills</h3><p>Dubai's most exclusive gated villa community</p><span class="atags"><span>Villas</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="v" data-name="the springs and the meadows"><a href="area/the-springs-and-the-meadows.html" data-slug="the-springs-and-the-meadows"><div class="thumb" style="--g1:#EEF6FD;--g2:#BFDDF5"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/the-springs-and-the-meadows.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>The Springs and The Meadows</h3><p>Established family villas around lakes</p><span class="atags"><span>Villas</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="v" data-name="jumeirah golf estates"><a href="area/jumeirah-golf-estates.html" data-slug="jumeirah-golf-estates"><div class="thumb" style="--g1:#E6F2FC;--g2:#AFD3F1"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/jumeirah-golf-estates.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Jumeirah Golf Estates</h3><p>Villas set around championship golf courses</p><span class="atags"><span>Villas</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="v" data-name="jumeirah park"><a href="area/jumeirah-park.html" data-slug="jumeirah-park"><div class="thumb" style="--g1:#EAF4FC;--g2:#A9D0F0"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/jumeirah-park.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Jumeirah Park</h3><p>Spacious family villas on large plots</p><span class="atags"><span>Villas</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="v w" data-name="jumeirah islands"><a href="area/jumeirah-islands.html" data-slug="jumeirah-islands"><div class="thumb" style="--g1:#F2F8FE;--g2:#B7DBF7"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/jumeirah-islands.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Jumeirah Islands</h3><p>Villas on island clusters surrounded by lakes</p><span class="atags"><span>Villas</span><span>Waterfront</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a v" data-name="damac hills"><a href="area/damac-hills.html" data-slug="damac-hills"><div class="thumb" style="--g1:#E3F0FB;--g2:#9FC9EC"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/damac-hills.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>DAMAC Hills</h3><p>Villas and apartments around a championship golf course</p><span class="atags"><span>Apartments</span><span>Villas</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="v" data-name="damac hills 2"><a href="area/damac-hills-2.html" data-slug="damac-hills-2"><div class="thumb" style="--g1:#EEF6FD;--g2:#BFDDF5"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/damac-hills-2.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>DAMAC Hills 2</h3><p>Well-priced villas and townhouses</p><span class="atags"><span>Villas</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="v n" data-name="damac lagoons"><a href="area/damac-lagoons.html" data-slug="damac-lagoons"><div class="thumb" style="--g1:#E6F2FC;--g2:#AFD3F1"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/damac-lagoons.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>DAMAC Lagoons</h3><p>Villas and townhouses around crystal lagoons</p><span class="atags"><span>Villas</span><span>New launches</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="v n" data-name="the valley"><a href="area/the-valley.html" data-slug="the-valley"><div class="thumb" style="--g1:#EAF4FC;--g2:#A9D0F0"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/the-valley.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>The Valley</h3><p>Emaar townhouses in a calm suburban setting</p><span class="atags"><span>Villas</span><span>New launches</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="v n" data-name="the oasis"><a href="area/the-oasis.html" data-slug="the-oasis"><div class="thumb" style="--g1:#F2F8FE;--g2:#B7DBF7"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/the-oasis.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>The Oasis</h3><p>Emaar's new luxury villa community</p><span class="atags"><span>Villas</span><span>New launches</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a v" data-name="town square"><a href="area/town-square.html" data-slug="town-square"><div class="thumb" style="--g1:#E3F0FB;--g2:#9FC9EC"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/town-square.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Town Square</h3><p>Well-priced townhouses and apartments</p><span class="atags"><span>Apartments</span><span>Villas</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a v" data-name="al furjan"><a href="area/al-furjan.html" data-slug="al-furjan"><div class="thumb" style="--g1:#EEF6FD;--g2:#BFDDF5"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/al-furjan.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Al Furjan</h3><p>Townhouses and apartments in a well-connected community</p><span class="atags"><span>Apartments</span><span>Villas</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a v" data-name="meydan"><a href="area/meydan.html" data-slug="meydan"><div class="thumb" style="--g1:#E6F2FC;--g2:#AFD3F1"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/meydan.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Meydan</h3><p>Villas and apartments near the racecourse</p><span class="atags"><span>Apartments</span><span>Villas</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="v" data-name="al barari"><a href="area/al-barari.html" data-slug="al-barari"><div class="thumb" style="--g1:#EAF4FC;--g2:#A9D0F0"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/al-barari.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Al Barari</h3><p>Low-density villas among botanical gardens</p><span class="atags"><span>Villas</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="v" data-name="mudon"><a href="area/mudon.html" data-slug="mudon"><div class="thumb" style="--g1:#F2F8FE;--g2:#B7DBF7"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/mudon.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Mudon</h3><p>Family townhouses and villas</p><span class="atags"><span>Villas</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a w" data-name="bluewaters island"><a href="area/bluewaters-island.html" data-slug="bluewaters-island"><div class="thumb" style="--g1:#E3F0FB;--g2:#9FC9EC"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/bluewaters-island.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Bluewaters Island</h3><p>Island apartments beside Ain Dubai</p><span class="atags"><span>Apartments</span><span>Waterfront</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a v w n" data-name="dubai islands"><a href="area/dubai-islands.html" data-slug="dubai-islands"><div class="thumb" style="--g1:#EEF6FD;--g2:#BFDDF5"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/dubai-islands.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Dubai Islands</h3><p>A new island community off Deira</p><span class="atags"><span>Apartments</span><span>Villas</span><span>Waterfront</span><span>New launches</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="v w n" data-name="palm jebel ali"><a href="area/palm-jebel-ali.html" data-slug="palm-jebel-ali"><div class="thumb" style="--g1:#E6F2FC;--g2:#AFD3F1"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/palm-jebel-ali.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Palm Jebel Ali</h3><p>New beachfront villas on the revived palm</p><span class="atags"><span>Villas</span><span>Waterfront</span><span>New launches</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li data-tags="a v n" data-name="dubai south"><a href="area/dubai-south.html" data-slug="dubai-south"><div class="thumb" style="--g1:#EAF4FC;--g2:#A9D0F0"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg><img data-src="images/areas/dubai-south.jpg" alt="" loading="lazy" decoding="async"></div><div class="acard"><h3>Dubai South</h3><p>An emerging district near Al Maktoum Airport</p><span class="atags"><span>Apartments</span><span>Villas</span><span>New launches</span></span></div><svg class="ico go2" width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a></li></ul>
+  <div class="more-wrap"><button type="button" class="btn btn-outline" id="area-more" aria-controls="areas-list" aria-expanded="false">Show all 36 communities</button></div>
+  <p class="guide-empty" id="area-empty" hidden>No community matches that search. <a href="#contact" data-area="another area">Ask us about it</a> and we'll tell you what we know.</p>
+</div></div></section>
+<section class="section developers" id="developers"><div class="wrap grid">
+<!-- Confirm this list matches the developers Solara Bay is registered to sell for; edit names freely. -->
+<div class="col-a"><h2 class="h2" data-reveal>New launches from our developer partners.</h2><p class="lead" data-reveal style="--i:1">We work directly with Dubai's leading developers, so you hear about launches early, and we still tell you plainly which ones are worth your money.</p>
+<div data-reveal style="--i:3;margin-top:32px"><a href="#" class="btn btn-sun js-wa" data-msg="Hello Solara Bay, please send me new off plan launches that match my budget.">Get new launch updates <svg class="ico arr" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div>
+<div class="col-b"><div class="assess" data-reveal style="--i:1"><h3>How we assess every developer</h3><ul><li><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-shield"/></svg><div><h4>Delivery record</h4><p>How many past projects were handed over on time, and how late the rest were.</p></div></li><li><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-doc"/></svg><div><h4>Escrow and registration</h4><p>Every project we recommend is RERA-registered with a regulated escrow account.</p></div></li><li><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-chart"/></svg><div><h4>Price against the market</h4><p>Launch price per square foot compared with ready homes nearby.</p></div></li><li><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-globe"/></svg><div><h4>Resale and rental demand</h4><p>Who will buy or rent it after handover, and at what price.</p></div></li></ul></div></div>
+</div></section>
+<section class="section why" id="about"><div class="wrap grid">
+<div class="col-a"><p class="kicker" data-reveal>About Solara Bay</p><h2 class="h2" data-reveal>Advice you can check, before you commit.</h2><p class="lead" data-reveal style="--i:1">Solara Bay Real Estate is a licensed real estate company based in Dubai. We help people buy, sell and invest in property across the UAE, and we help landlords and tenants find the right match. We explain every cost up front and give honest advice, even when the answer is to wait.</p><div data-reveal style="--i:2;margin-top:36px"><a href="#contact" class="btn btn-bay">Speak to an advisor <svg class="ico arr" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+<div class="photo " style="--g1:#F4F9FE;--g2:#BFDDF5" data-reveal="wipe"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="215" r="46" fill="#FFFFFF" opacity=".85"/><path fill="#8FBCE6" opacity=".6" d="M0 215v-24h14v-18h10v18h12v-44h8v44h14v-28h18v28h10v-52l12-12 12 12v52h16v-32h18v32h18v-54h8v54h22v-24h22v24h16v-40h20v40h24v-20h18v20h60v-30h14v30h40v8H0z"/><rect y="215" width="400" height="85" fill="#FFFFFF" opacity=".35"/></svg><img data-src="images/advisor.jpg" alt="The Solara Bay team with a client" loading="lazy" decoding="async"></div></div>
+<div class="col-b"><div class="ben" data-reveal style="--i:0"><div class="circ"><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-eye"/></svg></div><div><h3>You see the numbers before the pitch</h3><p>Every shortlist comes with recent sale prices in that building, annual service charges and a rent estimate from signed contracts, not asking prices. If a property doesn't add up, we say so.</p></div></div><div class="ben" data-reveal style="--i:2"><div class="circ"><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-globe"/></svg></div><div><h3>Buy or let from anywhere</h3><p>Live video viewings, digital signing and power-of-attorney support. You may not need to visit until you collect the keys.</p></div></div><div class="ben" data-reveal style="--i:3"><div class="circ"><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-shield"/></svg></div><div><h3>Straight answers on off plan</h3><p>Each developer's delivery history, how escrow protects your payments, and what happens if a project runs late.</p></div></div></div></div></section>
+<section class="section dark process" id="process"><div class="wrap">
+<div class="head-row"><div><h2 class="h2" data-reveal>From first call to keys in four clear steps.</h2><p class="lead" data-reveal style="--i:1">For ready property, most purchases complete in four to eight weeks. Off plan bookings can be secured within days of a launch.</p></div><a href="#contact" class="btn btn-sun" data-reveal style="--i:2">Book a free consultation <svg class="ico arr" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+<ol class="steps" id="steps"><li data-reveal style="--i:0"><span class="dot" style="--i:0"></span><span class="num">1</span><h3>Tell us what you need</h3><p>A 20-minute call about budget, goals and timeline. No obligation, no hard sell.</p></li><li data-reveal style="--i:1"><span class="dot" style="--i:1"></span><span class="num">2</span><h3>Review a shortlist that makes sense</h3><p>Three to five options, each with price history, service charges, expected rent and our honest view.</p></li><li data-reveal style="--i:2"><span class="dot" style="--i:2"></span><span class="num">3</span><h3>View, verify and negotiate</h3><p>In person or by live video. We check ownership and permits, then negotiate price and terms.</p></li><li data-reveal style="--i:3"><span class="dot" style="--i:3"></span><span class="num">4</span><h3>Transfer and handover</h3><p>We coordinate contracts, mortgage, trustee office and DLD transfer, then hand you the keys.</p></li></ol></div></section>
+<section class="section" id="reviews" hidden><div class="wrap">
+<!-- HIDDEN UNTIL LAUNCH-READY: add real client reviews (with written permission), then delete the word "hidden" above. Replace every bracketed review with a real client's words, shared with their written permission. -->
+<div class="head-row"><h2 class="h2" data-reveal>What our clients say.</h2><span data-reveal style="font-size:14px;color:var(--muted)">Real reviews, shared with permission</span></div>
+<div class="quotes">
+<figure class="feat" data-reveal><span class="disc" aria-hidden="true"></span><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>[Featured review: an overseas investor on buying without leaving home, and the result.]</blockquote><figcaption><b>[First name, initial], [City]</b>Off plan investor, Business Bay</figcaption></figure>
+<div class="qcol">
+<figure class="qcard" data-reveal style="--i:1"><blockquote>[Review from a homebuyer: what they feared, what we did, what they saved.]</blockquote><figcaption><span class="av">[A]</span><span><b>[First names]</b>Homebuyers, Dubai Hills Estate</span></figcaption></figure>
+<figure class="qcard" data-reveal style="--i:2"><blockquote>[Review from a landlord abroad: how rent and maintenance run without them.]</blockquote><figcaption><span class="av">[A]</span><span><b>[First name, initial]</b>Landlord, Dubai Marina</span></figcaption></figure>
+</div></div></div></section>
+<section class="section fees" id="fees"><div class="wrap grid">
+<div class="col-a"><h2 class="h2" data-reveal>Clear fees, agreed in writing.</h2><p class="lead" data-reveal style="--i:1">You'll know exactly what you pay us and what goes to the government, from the first conversation.</p><p class="foot" data-reveal style="--i:2">All fees subject to 5% VAT. The DLD transfer fee, trustee charges and mortgage registration are separate government costs, itemised for you in writing.</p></div>
+<div class="col-b"><div class="table" data-reveal style="--i:1"><div class="frow hl"><h3>Off plan purchase<span class=badge>No buyer fee</span></h3><div><span class="fig">0%</span><span class="unit">for buyers</span></div><p>Our fee is paid by the developer. You pay the same price as buying direct.</p></div><div class="frow"><h3>Buying a ready property</h3><div><span class="fig">2%</span><span class="unit">of the price</span></div><p>Payable only when the transfer completes.</p></div><div class="frow"><h3>Selling a property</h3><div><span class="fig">2%</span><span class="unit">of the price</span></div><p>Payable only when your property sells.</p></div><div class="frow"><h3>Renting a home</h3><div><span class="fig">5%</span><span class="unit">of annual rent</span></div><p>Paid by the tenant on signing.</p></div><div class="frow"><h3>Property management</h3><div><span class="fig fig-sm">Quoted</span><span class="unit">per property</span></div><p>Rent collection, renewals and maintenance, priced by unit size and the services you need.</p></div></div></div></div></section>
+<section class="section faq" id="faq"><div class="wrap grid">
+<div class="col-a"><h2 class="h2" data-reveal>Questions clients ask us.</h2><div class="ask" data-reveal style="--i:1"><h3>Still unsure about something?</h3><p>Ask an advisor directly. We reply within one working hour.</p><a href="#" class="btn btn-bay js-wa" data-msg="Hello Solara Bay, I have a question."><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-chat"/></svg> Chat on WhatsApp</a></div></div>
+<div class="col-b" data-reveal style="--i:1"><div class="qa is-open"><h3><button aria-expanded="true" aria-controls="a0" id="q0">Can I buy property in Dubai as a foreigner?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a0" role="region" aria-labelledby="q0"><div><p>Non-residents can buy freehold property in designated areas, which include most major communities. We'll confirm this for every property you consider.</p></div></div></div><div class="qa"><h3><button aria-expanded="false" aria-controls="a1" id="q1">Can I buy without travelling to Dubai?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a1" role="region" aria-labelledby="q1"><div><p>Yes. We offer live video viewings and digital signing, and can complete the transfer through a power of attorney. You only need to visit when you want to.</p></div></div></div><div class="qa"><h3><button aria-expanded="false" aria-controls="a2" id="q2">Does buying property give me a UAE visa?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a2" role="region" aria-labelledby="q2"><div><p>Property worth AED 2 million or more can qualify you for the 10-year Golden Visa, and lower values can qualify for other residence visas. Rules change, so we'll confirm current requirements for your case.</p></div></div></div><div class="qa"><h3><button aria-expanded="false" aria-controls="a3" id="q3">What will I pay on top of the property price?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a3" role="region" aria-labelledby="q3"><div><p>Budget for the 4% DLD transfer fee, trustee and registration charges, our commission plus VAT, and mortgage fees if you're financing. You'll get a full cost sheet before you make an offer.</p></div></div></div><div class="qa"><h3><button aria-expanded="false" aria-controls="a4" id="q4">Is off plan safe?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a4" role="region" aria-labelledby="q4"><div><p>Payments for registered off plan projects go into a regulated escrow account, released as construction progresses. The real risks are delays and market changes, so we check each developer's delivery record first.</p></div></div></div><div class="qa"><h3><button aria-expanded="false" aria-controls="a5" id="q5">How much rental income can I expect?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a5" role="region" aria-labelledby="q5"><div><p>It depends on the community, the unit and how it's managed. We base every estimate on current signed contracts in that building, not asking rents, and show you the figures.</p></div></div></div><div class="qa"><h3><button aria-expanded="false" aria-controls="a6" id="q6">How quickly can you let my property?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a6" role="region" aria-labelledby="q6"><div><p>Well-priced homes in popular communities often let within two to four weeks. We'll give you a realistic rent on our first call.</p></div></div></div><div class="qa"><h3><button aria-expanded="false" aria-controls="a7" id="q7">What deposit will I pay as a tenant?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a7" role="region" aria-labelledby="q7"><div><p>The deposit depends on the home and the tenancy agreement. We confirm the amount, payment terms and refund conditions before you sign.</p></div></div></div><div class="qa"><h3><button aria-expanded="false" aria-controls="a8" id="q8">Who arranges Ejari for tenants and landlords?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a8" role="region" aria-labelledby="q8"><div><p>Ejari registers the tenancy contract in Dubai. We help tenants and landlords prepare the documents and confirm who will register it and pay the charges.</p></div></div></div><div class="qa"><h3><button aria-expanded="false" aria-controls="a9" id="q9">How many rent cheques can I use?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a9" role="region" aria-labelledby="q9"><div><p>The number of cheques is agreed with the landlord. We confirm the payment schedule, cheque dates and any effect on the rent before you sign.</p></div></div></div><div class="qa"><h3><button aria-expanded="false" aria-controls="a10" id="q10">What agency fee do tenants and landlords pay?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a10" role="region" aria-labelledby="q10"><div><p>Tenants usually pay 5% of the yearly rent plus VAT, as shown in our fees. Landlords receive a separate quote if they choose property management.</p></div></div></div><div class="qa"><h3><button aria-expanded="false" aria-controls="a11" id="q11">Can you help me buy in other emirates?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a11" role="region" aria-labelledby="q11"><div><p>Yes. We help clients explore property across the UAE. Ownership rules, fees and buying steps vary by emirate, so we confirm the details for each property.</p></div></div></div></div></div></section>
+<section class="finale" id="finale">
+<div class="sky"><div class="wrap"><h2 class="h2" data-reveal>Tell us what you're looking for. We'll do the searching.</h2><p class="lead" data-reveal style="--i:1">A free 20-minute consultation. You'll leave knowing what your budget buys, which areas fit your goals, and what it will really cost.</p><div class="ctas" data-reveal style="--i:2"><a href="#contact" class="btn btn-sun">Book a free consultation <svg class="ico arr" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a><a href="#" class="btn btn-ghost js-wa" data-msg="Hello Solara Bay, I'd like to book a consultation."><svg class="ico" width="20" height="20" aria-hidden="true"><use href="#i-chat"/></svg> Chat on WhatsApp</a></div></div><span class="sun2" id="sun2" aria-hidden="true"></span></div>
+<div class="contact" id="contact"><div class="wrap grid">
+<div class="col-a"><h2 class="h2" data-reveal>Talk to an advisor.</h2><p class="intro-p" data-reveal style="--i:1">Share a few details. We reply within one working hour, Monday to Saturday.</p><ul class="cdetails"><li data-reveal style="--i:0"><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-chat"/></svg><span><b><a href="tel:+971561815038">+971 56 181 5038</a></b>WhatsApp and phone</span></li><li data-reveal style="--i:1"><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-mail"/></svg><span><b><a href="mailto:info@solarabay.ae">info@solarabay.ae</a></b>Email</span></li><li data-reveal style="--i:2"><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-shield"/></svg><span><b>License 1656071, ORN 64706</b>Licensed by the Dubai Land Department</span></li><li data-reveal style="--i:3"><svg class="ico" width="24" height="24" aria-hidden="true"><use href="#i-clock"/></svg><span><b>Monday to Saturday, 9:00 to 19:00</b>Hours</span></li></ul></div>
+<div class="col-b"><form class="form" id="lead" novalidate data-reveal style="--i:1">
+<div class="fld"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" required><span class="msg">Enter your name.</span></div>
+<div class="fld"><label for="f-phone">Phone or WhatsApp</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required><span class="msg">Enter a phone number so we can reach you.</span></div>
+<div class="fld"><label for="f-intent">I want to</label><select id="f-intent" name="intent"><option>Buy off plan</option><option>Buy a ready property</option><option>Sell a property</option><option>Rent a home</option><option>Let my property</option><option>Property management</option></select></div>
+<div class="fld"><label for="f-budget">Budget</label><select id="f-budget" name="budget"><option>Not sure yet</option><option>Under AED 1M</option><option>AED 1M to 2M</option><option>AED 2M to 5M</option><option>Above AED 5M</option></select></div>
+<div class="fld full"><label for="f-msg">Anything else we should know? (optional)</label><textarea id="f-msg" name="message" placeholder="Preferred areas, bedrooms, timeline"></textarea></div>
+<div class="sent" id="sent" role="status"><svg class="ico" width="22" height="22" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>WhatsApp opened with your details. Press send and we'll reply shortly.</div>
+<div class="submit"><span class="small">Your details open in WhatsApp as a ready-to-send message. We only use your details to reply to your enquiry.</span><button type="submit" class="btn btn-sun" id="send"><span class="spin" aria-hidden="true"></span><span class="lbl">Send via WhatsApp</span></button></div>
+</form></div></div></div>
+</section>
+</main>
+<div class="apage" id="area-view" role="dialog" aria-modal="true" aria-labelledby="ap-title" hidden><div id="area-view-inner"></div></div>
+<script type="application/json" id="areas-data">[{"slug": "downtown-dubai", "name": "Downtown Dubai", "short": "Apartments around Burj Khalifa and Dubai Mall", "tags": ["a"], "overview": "Downtown Dubai is the city's showpiece district, built around Burj Khalifa, The Dubai Mall and the Dubai Fountain. Life here is walkable and busy, with residents a few minutes from restaurants, culture and business districts.", "types": "Apartments from studios to penthouses, plus a small number of low-rise residences.", "bestfor": "Professionals, couples and investors who want a prestigious address with strong short-term rental appeal.", "highlights": ["Views of Burj Khalifa and the Dubai Fountain from many towers", "The Dubai Mall and Dubai Opera on the doorstep", "Boulevard living with cafés, hotels and events year-round"], "access": "Burj Khalifa/Dubai Mall metro station, and quick access to Sheikh Zayed Road and Business Bay.", "dev": "Emaar"}, {"slug": "business-bay", "name": "Business Bay", "short": "Canal-side apartments next to Downtown", "tags": ["a", "w"], "overview": "Business Bay sits beside Downtown along the Dubai Water Canal, mixing office towers with residential buildings and hotels. It offers a Downtown lifestyle with a wider choice of buildings and price points.", "types": "Mainly apartments, from compact studios to canal-view penthouses.", "bestfor": "Young professionals and investors looking for rental demand close to Downtown.", "highlights": ["Waterfront walking and cycling along the Dubai Water Canal", "Short drive or walk to The Dubai Mall", "Wide range of new and established buildings"], "access": "Business Bay metro station, with direct links to Sheikh Zayed Road and Al Khail Road.", "dev": ""}, {"slug": "dubai-marina", "name": "Dubai Marina", "short": "Waterfront towers with year-round rental demand", "tags": ["a", "w"], "overview": "Dubai Marina is a man-made waterfront district lined with high-rise towers, a promenade and yachts. It remains one of the city's most popular places to live and to rent out property.", "types": "Apartments of every size, with a strong supply of one and two bedrooms.", "bestfor": "Professionals, couples and investors who want a lively waterfront lifestyle.", "highlights": ["Marina Walk with restaurants and cafés along the water", "Beaches at JBR a short walk away", "Consistent tenant demand from people working nearby"], "access": "Dubai Metro and Dubai Tram stations, and direct access to Sheikh Zayed Road.", "dev": ""}, {"slug": "jumeirah-beach-residence-jbr", "name": "Jumeirah Beach Residence (JBR)", "short": "Beachfront apartments along The Walk", "tags": ["a", "w"], "overview": "JBR is a beachfront community of towers facing the sea, with The Walk and The Beach at its base. Residents live directly on one of Dubai's busiest public beaches.", "types": "Apartments, mostly one to four bedrooms, many with sea views.", "bestfor": "Beach lovers, families who want the sea on their doorstep, and holiday-home investors.", "highlights": ["Direct access to the beach", "The Walk and The Beach for dining and retail", "Views towards Bluewaters Island and Ain Dubai"], "access": "Dubai Tram stops along the community, with Dubai Marina metro stations nearby.", "dev": ""}, {"slug": "palm-jumeirah", "name": "Palm Jumeirah", "short": "Beachfront villas and apartments on the Palm", "tags": ["a", "v", "w"], "overview": "Palm Jumeirah is Dubai's famous man-made island, home to beachfront villas on the fronds and apartment buildings along the trunk and crescent. It is one of the city's most sought-after addresses.", "types": "Signature and garden villas on the fronds, and apartments and penthouses on the trunk.", "bestfor": "Buyers seeking a landmark beachfront home, and luxury rental investors.", "highlights": ["Private beach access for many villas and buildings", "Resorts, beach clubs and fine dining", "Strong international demand for luxury homes"], "access": "The Palm Monorail and road access from Sheikh Zayed Road.", "dev": "Nakheel"}, {"slug": "dubai-hills-estate", "name": "Dubai Hills Estate", "short": "Villas, townhouses and apartments around a golf course", "tags": ["a", "v"], "overview": "Dubai Hills Estate is a large, green master community built around an 18-hole golf course and a central park. It combines family villas with apartment districts and its own major mall.", "types": "Villas, townhouses and apartments across many sub-communities.", "bestfor": "Families who want space and greenery within easy reach of Downtown.", "highlights": ["Dubai Hills Golf Club and large parks", "Dubai Hills Mall within the community", "Schools and a major hospital close by"], "access": "Al Khail Road and Umm Suqeim Street, around 15 to 20 minutes from Downtown by car.", "dev": "Emaar"}, {"slug": "arabian-ranches", "name": "Arabian Ranches", "short": "Established family villas with a golf club", "tags": ["v"], "overview": "Arabian Ranches is one of Dubai's original villa communities, known for its mature landscaping, quiet streets and strong community feel.", "types": "Villas from three to six bedrooms, across established sub-communities.", "bestfor": "Families looking for a settled, green neighbourhood with a strong community.", "highlights": ["Arabian Ranches Golf Club", "Community centre with shops, cafés and a supermarket", "Schools within and near the community"], "access": "Sheikh Mohammed Bin Zayed Road and Umm Suqeim Street; a car is essential.", "dev": "Emaar"}, {"slug": "arabian-ranches-2", "name": "Arabian Ranches 2", "short": "Newer villas and townhouses beside the original Ranches", "tags": ["v"], "overview": "Arabian Ranches 2 extends the original Ranches with newer villas and townhouses, pools, parks and play areas across well-kept clusters.", "types": "Villas and townhouses, mostly three to six bedrooms, in clusters such as Rosa, Palma, Lila and Samara.", "bestfor": "Families who want the Ranches lifestyle in a slightly newer setting.", "highlights": ["Community pools, parks and sports courts", "Access to amenities in the original Arabian Ranches", "Quiet, family-focused streets"], "access": "Next to Arabian Ranches, with access via Sheikh Mohammed Bin Zayed Road.", "dev": "Emaar"}, {"slug": "arabian-ranches-3", "name": "Arabian Ranches 3", "short": "The newest phase of townhouses and villas", "tags": ["v", "n"], "overview": "Arabian Ranches 3 is the newest chapter of the Ranches, with modern townhouses and villas released in phases such as Sun, Joy, Bliss and Ruba.", "types": "Mainly three and four bedroom townhouses, plus villas in later phases.", "bestfor": "First-time villa buyers and families looking for newer, well-priced homes.", "highlights": ["Modern designs with community pools and parks", "A mix of ready homes and off plan phases", "Emaar master-planned with retail and leisure"], "access": "Off Sheikh Mohammed Bin Zayed Road, near Arabian Ranches and Dubai Hills.", "dev": "Emaar"}, {"slug": "tilal-al-ghaf", "name": "Tilal Al Ghaf", "short": "Villas and townhouses around a swimmable lagoon", "tags": ["v", "n"], "overview": "Tilal Al Ghaf is a master community centred on Lagoon Al Ghaf, a swimmable lagoon with sandy beaches. It combines resort-style living with family villas and townhouses.", "types": "Townhouses, villas and luxury mansions across several neighbourhoods.", "bestfor": "Families who want a resort-style community with water and open space.", "highlights": ["Lagoon Al Ghaf with beaches and water sports", "Parks, trails and play areas throughout", "A newer community with ready and off plan homes"], "access": "Off Hessa Street and Sheikh Mohammed Bin Zayed Road.", "dev": "Majid Al Futtaim"}, {"slug": "dubai-creek-harbour", "name": "Dubai Creek Harbour", "short": "Waterfront towers on Dubai Creek", "tags": ["a", "w", "n"], "overview": "Dubai Creek Harbour is a waterfront district on the banks of Dubai Creek, with apartment towers, a marina and Creek Beach. It offers skyline views across to Downtown.", "types": "Apartments, from one bedroom to large waterfront residences, many still being delivered.", "bestfor": "Buyers and investors looking for new waterfront apartments close to the city centre.", "highlights": ["Creek Beach and waterfront promenades", "Views of the Downtown skyline", "Next to the Ras Al Khor Wildlife Sanctuary"], "access": "Close to Dubai International Airport and Ras Al Khor Road.", "dev": "Emaar"}, {"slug": "emaar-beachfront", "name": "Emaar Beachfront", "short": "Beachfront towers between the Marina and the Palm", "tags": ["a", "w", "n"], "overview": "Emaar Beachfront is a gated island community of towers between Dubai Marina and Palm Jumeirah, with a private beach for residents.", "types": "Apartments and penthouses with sea or marina views.", "bestfor": "Buyers who want beachfront apartments with a quieter, private feel.", "highlights": ["Private beach for residents", "Views of the Palm, the Marina and the Gulf", "Minutes from Dubai Marina and JBR"], "access": "Direct connection to Sheikh Zayed Road and the Dubai Marina area.", "dev": "Emaar"}, {"slug": "city-walk", "name": "City Walk", "short": "Low-rise urban living with shops and dining", "tags": ["a"], "overview": "City Walk is an open-air neighbourhood of low-rise residences, boutiques and restaurants in Al Wasl, with a stylish, walkable feel.", "types": "Apartments, from one bedroom to larger family units.", "bestfor": "Professionals and couples who want central, walkable living.", "highlights": ["Street-level dining and shopping", "Coca-Cola Arena for concerts and events", "Close to Downtown and Jumeirah"], "access": "Al Wasl Road and Al Safa Street, a short drive from Downtown.", "dev": "Meraas"}, {"slug": "jumeirah-lake-towers-jlt", "name": "Jumeirah Lake Towers (JLT)", "short": "Lakeside towers with strong value", "tags": ["a", "w"], "overview": "JLT is a community of towers arranged in clusters around artificial lakes, opposite Dubai Marina. It offers good value with a busy local scene of cafés and restaurants.", "types": "Apartments across a wide range of sizes, plus office towers.", "bestfor": "Tenants and investors seeking value close to the Marina.", "highlights": ["Lakeside walkways and parks", "Many restaurants and cafés at ground level", "Close to Dubai Marina and JBR"], "access": "Two metro stations serve the community, with direct Sheikh Zayed Road access.", "dev": ""}, {"slug": "jumeirah-village-circle-jvc", "name": "Jumeirah Village Circle (JVC)", "short": "Popular mid-market apartments and townhouses", "tags": ["a", "v"], "overview": "JVC is a large, family-friendly community with apartments, townhouses and villas set around parks. It is one of Dubai's most active areas for mid-market buyers and renters.", "types": "Apartments, townhouses and villas, with many newer buildings.", "bestfor": "First-time buyers, families and investors looking for rental yield at accessible prices.", "highlights": ["Plenty of parks and green spaces", "Circle Mall and neighbourhood shops", "A large choice of new and off plan projects"], "access": "Between Al Khail Road and Sheikh Mohammed Bin Zayed Road.", "dev": "Nakheel"}, {"slug": "mohammed-bin-rashid-city", "name": "Mohammed Bin Rashid City", "short": "Luxury villas and apartments close to Downtown", "tags": ["a", "v", "n"], "overview": "Mohammed Bin Rashid City is a large development area near Downtown and Meydan, including District One with its crystal lagoon and luxury villas.", "types": "Luxury villas and mansions, plus apartments in several districts.", "bestfor": "Buyers seeking high-end villas close to the city centre.", "highlights": ["District One's crystal lagoon", "Large luxury villas on generous plots", "Minutes from Downtown and Business Bay"], "access": "Al Khail Road and Meydan Road, close to Downtown.", "dev": ""}, {"slug": "sobha-hartland", "name": "Sobha Hartland", "short": "Gated green community of villas and apartments", "tags": ["a", "v", "n"], "overview": "Sobha Hartland is a gated community within Mohammed Bin Rashid City, known for its landscaping and Sobha's build quality. It combines villas with apartment towers.", "types": "Villas, townhouses and apartments, including newer waterfront phases.", "bestfor": "Families and buyers who value build quality and greenery near the city.", "highlights": ["Large green spaces and landscaped parks", "International schools within the community", "Views towards the Downtown skyline"], "access": "Close to Al Khail Road and Ras Al Khor Road.", "dev": "Sobha Realty"}, {"slug": "emirates-hills", "name": "Emirates Hills", "short": "Dubai's most exclusive gated villa community", "tags": ["v"], "overview": "Emirates Hills is Dubai's most exclusive villa enclave, with large custom mansions set around the Montgomerie Golf Club.", "types": "Custom-built mansions and villa plots.", "bestfor": "Ultra-high-net-worth buyers seeking privacy and prestige.", "highlights": ["Golf course and lake views", "Large plots with custom homes", "Close to Dubai Marina and Al Barsha"], "access": "Sheikh Zayed Road and Al Khail Road, near Dubai Marina.", "dev": "Emaar"}, {"slug": "the-springs-and-the-meadows", "name": "The Springs and The Meadows", "short": "Established family villas around lakes", "tags": ["v"], "overview": "The Springs and The Meadows are established villa communities set around lakes and parks, popular with families for decades.", "types": "Townhouses and villas, with larger homes in The Meadows.", "bestfor": "Families who want a mature, green community close to the Marina.", "highlights": ["Lakes, parks and walking paths", "Community centres with shops and cafés", "Close to schools and Dubai Internet City"], "access": "Between Sheikh Zayed Road and Al Khail Road.", "dev": "Emaar"}, {"slug": "jumeirah-golf-estates", "name": "Jumeirah Golf Estates", "short": "Villas set around championship golf courses", "tags": ["v"], "overview": "Jumeirah Golf Estates is a villa community built around two championship golf courses, known for spacious homes and a relaxed, resort-like setting.", "types": "Villas and townhouses, plus some apartments.", "bestfor": "Golfers and families looking for space and quiet.", "highlights": ["Two championship golf courses", "Clubhouse dining and leisure", "Spacious villas with golf views"], "access": "Off Sheikh Mohammed Bin Zayed Road, close to Al Furjan.", "dev": ""}, {"slug": "jumeirah-park", "name": "Jumeirah Park", "short": "Spacious family villas on large plots", "tags": ["v"], "overview": "Jumeirah Park is a villa community with large plots and wide streets, close to JLT and Dubai Marina.", "types": "Three to five bedroom villas on generous plots.", "bestfor": "Families wanting large gardens close to the Marina area.", "highlights": ["Large plots with private gardens", "Community parks and a pavilion with shops", "Near JLT and Dubai Marina"], "access": "Sheikh Zayed Road and Sheikh Mohammed Bin Zayed Road.", "dev": "Nakheel"}, {"slug": "jumeirah-islands", "name": "Jumeirah Islands", "short": "Villas on island clusters surrounded by lakes", "tags": ["v", "w"], "overview": "Jumeirah Islands is a villa community arranged on island clusters surrounded by lakes, offering waterside living in a quiet setting.", "types": "Villas, many with lake frontage.", "bestfor": "Families seeking waterfront villas near the Marina.", "highlights": ["Villas on lakes", "A clubhouse and community pavilion", "Near JLT and Dubai Marina"], "access": "Close to Sheikh Zayed Road and JLT.", "dev": "Nakheel"}, {"slug": "damac-hills", "name": "DAMAC Hills", "short": "Villas and apartments around a championship golf course", "tags": ["a", "v"], "overview": "DAMAC Hills is a golf-course community with villas, townhouses and apartments, parks and sports facilities.", "types": "Villas, townhouses and apartments.", "bestfor": "Families and investors wanting golf-course living at a range of budgets.", "highlights": ["Championship golf course", "Parks, sports facilities and trails", "A wide choice of home types"], "access": "Off Hessa Street and Sheikh Mohammed Bin Zayed Road.", "dev": "DAMAC"}, {"slug": "damac-hills-2", "name": "DAMAC Hills 2", "short": "Well-priced villas and townhouses", "tags": ["v"], "overview": "DAMAC Hills 2 is a large community of townhouses and villas with themed leisure facilities, offering some of Dubai's more accessible villa prices.", "types": "Townhouses and villas, mostly three to five bedrooms.", "bestfor": "Buyers looking for affordable villa living.", "highlights": ["Accessible villa prices", "Leisure facilities and parks", "Newer homes in a quiet setting"], "access": "Off Al Qudra Road; a car is essential.", "dev": "DAMAC"}, {"slug": "damac-lagoons", "name": "DAMAC Lagoons", "short": "Villas and townhouses around crystal lagoons", "tags": ["v", "n"], "overview": "DAMAC Lagoons is a newer community of Mediterranean-inspired clusters set around lagoons and beaches.", "types": "Townhouses and villas, largely off plan and recently delivered.", "bestfor": "Buyers wanting a newer resort-style villa community.", "highlights": ["Lagoons and sandy beaches", "Clusters with distinct Mediterranean themes", "Payment plans on new phases"], "access": "Near DAMAC Hills, off Sheikh Mohammed Bin Zayed Road.", "dev": "DAMAC"}, {"slug": "the-valley", "name": "The Valley", "short": "Emaar townhouses in a calm suburban setting", "tags": ["v", "n"], "overview": "The Valley is an Emaar townhouse and villa community on the Dubai to Al Ain road, offering newer homes at accessible prices.", "types": "Townhouses and villas, mostly three and four bedrooms.", "bestfor": "First-time villa buyers and families who don't mind a longer commute.", "highlights": ["Modern Emaar homes at accessible prices", "Parks, pools and a community centre", "Quiet surroundings with open space"], "access": "Dubai-Al Ain Road; a car is essential.", "dev": "Emaar"}, {"slug": "the-oasis", "name": "The Oasis", "short": "Emaar's new luxury villa community", "tags": ["v", "n"], "overview": "The Oasis is one of Emaar's newest luxury communities, with large villas and mansions set around lagoons and green spaces.", "types": "Luxury villas and mansions, mainly off plan.", "bestfor": "Buyers seeking a new luxury villa with a payment plan.", "highlights": ["Waterways and lagoons through the community", "Large villas with contemporary designs", "Emaar master-planned amenities"], "access": "Off Sheikh Mohammed Bin Zayed Road.", "dev": "Emaar"}, {"slug": "town-square", "name": "Town Square", "short": "Well-priced townhouses and apartments", "tags": ["a", "v"], "overview": "Town Square is a large master community by Nshama with townhouses and apartments around a central park and retail area.", "types": "Apartments and townhouses.", "bestfor": "Families and first-time buyers on a budget.", "highlights": ["Town Square Park and community retail", "Accessible prices for Dubai", "A strong mix of families and young professionals"], "access": "Al Qudra Road, off Sheikh Mohammed Bin Zayed Road.", "dev": "Nshama"}, {"slug": "al-furjan", "name": "Al Furjan", "short": "Townhouses and apartments in a well-connected community", "tags": ["a", "v"], "overview": "Al Furjan is a community of townhouses, villas and low-rise apartments, popular with families working in the Marina and Jebel Ali areas.", "types": "Townhouses, villas and apartments.", "bestfor": "Families and investors seeking value with good connections.", "highlights": ["Community pavilion with shops and cafés", "Mix of villas and newer apartment buildings", "Close to Expo City and Jebel Ali"], "access": "Metro stations on the Route 2020 line, plus Sheikh Zayed Road access.", "dev": "Nakheel"}, {"slug": "meydan", "name": "Meydan", "short": "Villas and apartments near the racecourse", "tags": ["a", "v"], "overview": "Meydan surrounds the famous Meydan Racecourse, with apartments and villa developments close to Downtown.", "types": "Apartments and villas.", "bestfor": "Buyers wanting a central location with newer homes.", "highlights": ["Meydan Racecourse and hotel", "Close to Downtown and Business Bay", "Newer developments nearby"], "access": "Al Khail Road and Meydan Road.", "dev": ""}, {"slug": "al-barari", "name": "Al Barari", "short": "Low-density villas among botanical gardens", "tags": ["v"], "overview": "Al Barari is a low-density villa community set within lush botanical gardens, known for privacy and greenery.", "types": "Luxury villas and a small number of apartments.", "bestfor": "Buyers seeking a green, private retreat.", "highlights": ["Extensive landscaped gardens", "Low-density, private streets", "Wellness and leisure facilities"], "access": "Sheikh Mohammed Bin Zayed Road.", "dev": ""}, {"slug": "mudon", "name": "Mudon", "short": "Family townhouses and villas", "tags": ["v"], "overview": "Mudon is a family community of townhouses and villas around a central park, with a relaxed suburban feel.", "types": "Townhouses and villas.", "bestfor": "Families looking for value and a community atmosphere.", "highlights": ["Central park and cycling tracks", "Community pools and play areas", "Accessible villa prices"], "access": "Near Hessa Street and Al Qudra Road.", "dev": ""}, {"slug": "bluewaters-island", "name": "Bluewaters Island", "short": "Island apartments beside Ain Dubai", "tags": ["a", "w"], "overview": "Bluewaters Island is a compact island community opposite JBR, home to Ain Dubai, hotels and residential buildings.", "types": "Apartments and penthouses.", "bestfor": "Buyers wanting exclusive waterfront apartments near JBR.", "highlights": ["Ain Dubai and waterfront dining", "Views of JBR and the Marina", "A small, exclusive residential supply"], "access": "Bridge link to JBR and Sheikh Zayed Road.", "dev": "Meraas"}, {"slug": "dubai-islands", "name": "Dubai Islands", "short": "A new island community off Deira", "tags": ["a", "v", "w", "n"], "overview": "Dubai Islands is a new island destination off the Deira coast, with beaches, marinas, hotels and residential projects in development.", "types": "Apartments and villas, mainly off plan.", "bestfor": "Investors and buyers looking for early-stage waterfront opportunities.", "highlights": ["Beaches and marinas across several islands", "New residential and hospitality projects", "Close to Deira and the airport"], "access": "Via Deira and the Infinity Bridge area.", "dev": "Nakheel"}, {"slug": "palm-jebel-ali", "name": "Palm Jebel Ali", "short": "New beachfront villas on the revived palm", "tags": ["v", "w", "n"], "overview": "Palm Jebel Ali is Nakheel's revived palm island, larger than Palm Jumeirah, with new beachfront villas under development.", "types": "Beachfront villas, off plan.", "bestfor": "Buyers seeking a new-generation palm villa with a payment plan.", "highlights": ["Beachfront villas on the fronds", "Master-planned resorts and leisure", "One of Dubai's major new waterfront projects"], "access": "Off Sheikh Zayed Road near Jebel Ali.", "dev": "Nakheel"}, {"slug": "dubai-south", "name": "Dubai South", "short": "An emerging district near Al Maktoum Airport", "tags": ["a", "v", "n"], "overview": "Dubai South is a large emerging district around Al Maktoum International Airport and close to Expo City Dubai.", "types": "Apartments, townhouses and villas, including many new projects.", "bestfor": "Long-term investors and budget-conscious buyers.", "highlights": ["Close to Expo City Dubai", "Planned growth around Al Maktoum International Airport", "Accessible prices for new homes"], "access": "Sheikh Mohammed Bin Zayed Road and Emirates Road.", "dev": ""}]</script>
+<footer class="footer"><div class="wrap">
+<div class="fgrid">
+<div><a href="#top" class="logo" aria-label="Solara Bay, back to top"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 34V20a12 12 0 0 1 24 0v14" fill="none" stroke="var(--hx-ink,var(--ink))" stroke-width="1.6"/><circle cx="20" cy="21" r="4.2" fill="var(--hx-blue,var(--sun-text))"/><path d="M5 34h30" stroke="var(--hx-ink,var(--ink))" stroke-width="1.6"/></svg><span><b>Solara Bay</b><small>REAL ESTATE</small></span></a><p style="margin-top:20px;max-width:24em">A licensed Dubai brokerage helping investors, homebuyers and landlords buy, sell, let and manage property with clear advice and transparent fees.</p></div>
+<div><h4>Services</h4><ul><li><a href="#buy" data-tab="buy">Buy</a></li><li><a href="#sell" data-tab="sell">Sell</a></li><li><a href="#rent" data-tab="rent">Rent</a></li><li><a href="#developers">Developers</a></li></ul></div>
+<div><h4>Company</h4><ul><li><a href="#about">About us</a></li><li><a href="#area-guide">Area guide</a></li><li><a href="#fees">Fees</a></li><li><a href="#faq">FAQ</a></li><li><a href="privacy.html">Privacy policy</a></li></ul></div>
+<!-- Add a "Follow" column here once social accounts are live -->
+</div>
+<div class="legal"><span>© <span id="yr">2026</span> Solara Bay Real Estate. License 1656071. ORN 64706. All rights reserved.</span></div>
+<p class="footer-disclaimer">Information on this website is general guidance and may change. Please confirm details with us before making a decision.</p></div></footer>
+<nav class="actionbar" id="actionbar" aria-label="Quick contact">
+<a href="tel:+971561815038" aria-label="Call Solara Bay"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg></a>
+<a href="#" class="js-wa" data-msg="Hello Solara Bay, I have a property question." aria-label="Chat on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></a>
+<a href="#contact" class="book">Book a free consultation</a>
+</nav>
+<a href="#" class="wa js-wa" id="wa" data-msg="Hello Solara Bay, I have a property question." aria-label="Chat with us on WhatsApp"><span class="tip">Chat with an advisor</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg></a><script>
+/* ===== Set your WhatsApp number here: country code + number, digits only ===== */
+const CONFIG = { whatsapp: "971561815038" };
+
+(() => {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const wa = m => "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(m);
+
+  // WhatsApp links
+  $$(".js-wa").forEach(a => { a.href = wa(a.dataset.msg || "Hello Solara Bay"); a.target = "_blank"; a.rel = "noopener"; });
+
+  // Images: load real photos if present, fade in; keep branded art if missing
+  $$("img[data-src]").forEach(img => {
+    img.addEventListener("load", () => { img.classList.add("is-loaded"); img.closest(".photo")?.classList.add("has-img"); }, { once: true });
+    img.addEventListener("error", () => img.remove(), { once: true });
+    img.src = img.dataset.src;
+  });
+
+  // Reveal on scroll (once), + process timeline
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+  }, { rootMargin: "0px 0px -10% 0px", threshold: 0.12 });
+  $$("[data-reveal]").forEach(el => io.observe(el));
+  const steps = $("#steps"); if (steps) io.observe(steps);
+
+  // Header: solid after hero start, hides on scroll down, returns on scroll up; progress bar; parallax sun
+  const header = $("#header"), float = $("#wa"), hero = $(".hero"), sun2 = $("#sun2"), finale = $("#finale");
+  const actionbar = $("#actionbar"); let formVisible = false;
+  new IntersectionObserver(([e]) => { formVisible = e.isIntersecting; onScroll(); }, { threshold: 0.15 }).observe($("#lead"));
+  let lastY = scrollY, ticking = false, holdHeader = 0;
+  // Keep the menu visible after a menu jump, so the next choice is one click away
+  document.addEventListener("click", e => { if (e.target.closest('.menu a, .drawer a, .footer a, a[href^="#"]')) { holdHeader = Date.now() + 1400; header.classList.remove("is-hidden"); } });
+  const onScroll = () => {
+    const y = scrollY;
+    header.classList.toggle("is-solid", y > 40);
+    const drawerOpen = $("#drawer").classList.contains("is-open");
+    if (!drawerOpen && Date.now() > holdHeader) header.classList.toggle("is-hidden", y > innerHeight * 0.9 && y > lastY + 4);
+    if (y < lastY - 4) header.classList.remove("is-hidden");
+    const past = y > hero.offsetHeight * 0.6;
+    float.classList.toggle("show", past);
+    actionbar.classList.toggle("show", past && !formVisible && !$("#drawer").classList.contains("is-open"));
+    if (!reduce && sun2) {
+      const r = finale.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, (r.top + 200) / innerHeight));
+      sun2.style.setProperty("--p", p.toFixed(3));
+    }
+    lastY = y; ticking = false;
+  };
+  addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+
+  // Active nav link
+  const links = $$(".menu a");
+  let current = "buy", inServices = false;
+  const mark = id => links.forEach(l => l.classList.toggle("is-active", l.getAttribute("href") === "#" + id));
+  const navIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      inServices = e.target.id === "services";
+      mark(inServices ? current : e.target.id);
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  ["services", "area-guide", "developers", "about", "process", "fees", "faq", "contact"].forEach(id => { const s = document.getElementById(id); if (s) navIO.observe(s); });
+
+  // Tabs: Buy / Sell / Rent
+  const tabs = $$(".tab"), ink = $(".tab-ink");
+  const placeInk = () => { const t = $(".tab[aria-selected='true']"); if (t && ink) { ink.style.width = t.offsetWidth + "px"; ink.style.transform = `translateX(${t.offsetLeft}px)`; } };
+  const selectTab = (id, focus) => {
+    tabs.forEach(t => {
+      const on = t.id === "tab-" + id;
+      t.setAttribute("aria-selected", on); t.tabIndex = on ? 0 : -1;
+      $("#" + t.getAttribute("aria-controls")).hidden = !on;
+      if (on && focus) t.focus();
+    });
+    current = id; placeInk(); if (inServices) mark(id);
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => selectTab(t.id.slice(4)));
+    t.addEventListener("keydown", e => {
+      const k = { ArrowRight: 1, ArrowLeft: -1 }[e.key]; if (!k && e.key !== "Home" && e.key !== "End") return;
+      e.preventDefault();
+      const n = e.key === "Home" ? 0 : e.key === "End" ? tabs.length - 1 : (i + k + tabs.length) % tabs.length;
+      selectTab(tabs[n].id.slice(4), true);
+    });
+  });
+  $$("a[data-tab]").forEach(a => a.addEventListener("click", () => selectTab(a.dataset.tab)));
+  if (["#buy", "#sell", "#rent"].includes(location.hash)) selectTab(location.hash.slice(1));
+  addEventListener("resize", placeInk); document.fonts?.ready.then(placeInk); placeInk();
+
+  // Mobile drawer
+  const burger = $("#burger"), drawer = $("#drawer");
+  const setDrawer = open => {
+    drawer.classList.toggle("is-open", open); drawer.setAttribute("aria-hidden", !open);
+    burger.setAttribute("aria-expanded", open); burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.body.style.overflow = open ? "hidden" : ""; header.classList.remove("is-hidden");
+    ["#main", "footer", "#actionbar"].forEach(s => { const el = $(s); if (el) el.inert = open; });
+    actionbar.classList.toggle("show", !open && scrollY > hero.offsetHeight * 0.6);
+    if (open) drawer.querySelector("a").focus({ preventScroll: true });
+  };
+  burger.addEventListener("click", () => setDrawer(!drawer.classList.contains("is-open")));
+  $$("a", drawer).forEach(a => a.addEventListener("click", () => setDrawer(false)));
+  addEventListener("keydown", e => { if (e.key === "Escape" && drawer.classList.contains("is-open")) { setDrawer(false); burger.focus(); } });
+
+  // FAQ accordion (one open at a time)
+  $$(".qa button").forEach(btn => btn.addEventListener("click", () => {
+    const item = btn.closest(".qa"), open = !item.classList.contains("is-open");
+    $$(".qa.is-open").forEach(o => { o.classList.remove("is-open"); o.querySelector("button").setAttribute("aria-expanded", "false"); });
+    item.classList.toggle("is-open", open); btn.setAttribute("aria-expanded", String(open));
+  }));
+
+  // Lead form -> WhatsApp, with validation and button states
+  const form = $("#lead"), send = $("#send"), sent = $("#sent");
+  const F = { name: $("#f-name"), phone: $("#f-phone"), intent: $("#f-intent"), budget: $("#f-budget"), message: $("#f-msg") };
+  $$("input", form).forEach(i => i.addEventListener("input", () => i.closest(".fld").classList.remove("err")));
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const name = F.name.value.trim(), phone = F.phone.value.trim();
+    let first = null;
+    [[F.name, name], [F.phone, phone]].forEach(([el, v]) => {
+      const f = el.closest(".fld"); f.classList.remove("err");
+      if (!v) { void f.offsetWidth; f.classList.add("err"); el.setAttribute("aria-invalid", "true"); first = first || el; } else el.removeAttribute("aria-invalid");
+    });
+    if (first) { first.focus(); return; }
+    send.setAttribute("aria-busy", "true"); $(".lbl", send).textContent = "Opening WhatsApp";
+    const msg = "New enquiry from solarabay.ae\nName: " + name + "\nPhone: " + phone + "\nLooking to: " + F.intent.value + "\nBudget: " + F.budget.value + (F.message.value.trim() ? "\nNotes: " + F.message.value.trim() : "");
+    const w = window.open(wa(msg), "_blank");
+    if (w) w.opener = null; else location.href = wa(msg);
+    setTimeout(() => {
+      send.removeAttribute("aria-busy"); $(".lbl", send).textContent = "Send via WhatsApp";
+      sent.classList.add("show");
+    }, 600);
+  });
+
+
+  // Area guide: search + filter
+  const items = $$("#areas-list li"), search = $("#area-search"), count = $("#area-count"), empty = $("#area-empty");
+  let filter = "all";
+  const apply = () => {
+    const q = search.value.trim().toLowerCase();
+    let shown = 0;
+    items.forEach(li => {
+      const ok = (filter === "all" || li.dataset.tags.split(" ").includes(filter)) && (!q || li.dataset.name.includes(q));
+      li.hidden = !ok; if (ok) shown++;
+    });
+    const filtering = filter !== "all" || q;
+    list.classList.toggle("is-collapsed", !filtering && !expanded);
+    more.parentElement.hidden = filtering || expanded;
+    count.textContent = shown === items.length ? `Showing all ${items.length} communities` : `Showing ${shown} of ${items.length} communities`;
+    empty.hidden = shown > 0;
+  };
+  const list = $("#areas-list"), more = $("#area-more"); let expanded = false;
+  more.addEventListener("click", () => { expanded = true; more.setAttribute("aria-expanded", "true"); apply(); list.querySelectorAll("li")[12]?.querySelector("a").focus({ preventScroll: true }); });
+  $$(".chip").forEach(c => c.addEventListener("click", () => {
+    $$(".chip").forEach(x => x.setAttribute("aria-pressed", x === c)); filter = c.dataset.filter; apply();
+  }));
+  search.addEventListener("input", apply);
+
+
+  // ===== Area guide: lifestyle collections =====
+  $$(".collection").forEach(c => c.addEventListener("click", () => {
+    const chip = $(`.chip[data-filter="${c.dataset.collect}"]`); chip?.click();
+    search.value = ""; apply();
+    $(".guide").scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+  }));
+
+  // ===== Community pages (in-page, with their own address) =====
+  const AREAS = JSON.parse($("#areas-data").textContent);
+  const bySlug = Object.fromEntries(AREAS.map(a => [a.slug, a]));
+  const LBL = { a: "Apartments", v: "Villas", w: "Waterfront", n: "New launches" };
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const icon = (n, s = 20) => `<svg class="ico" width="${s}" height="${s}" aria-hidden="true"><use href="#i-${n}"/></svg>`;
+  const view = $("#area-view"), inner = $("#area-view-inner");
+  const MINI_SKY = '<svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="300" cy="96" r="30" fill="#FFFFFF" opacity=".9"/><path fill="#8FBCE6" opacity=".55" d="M0 96v-14h10v-10h8v10h9v-26h6v26h10v-16h13v16h8v-30l9-8 9 8v30h11v-18h13v18h13v-32h6v32h16v-14h16v14h11v-24h15v24h17v-12h13v12h44v-18h10v18h70v8H0z"/><rect y="96" width="400" height="24" fill="#FFFFFF" opacity=".4"/></svg>';
+  const heroArt = a => `<div class="ap-art"><svg viewBox="0 0 1440 170" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="1080" cy="150" r="120" fill="#fff" opacity=".9"/><path fill="#B7D5EF" d="M500 150v-30h18v-22h14v22h16v-52h10v-18h8v18h10v52h18v-34h24v34h12V80l16-14 16 14v70h20v-40h26v40h22V88h10V64h8v24h10v62h24v-28h32v28h22V96h32v54h32v-24h26v24h50v-36h20v36h110v-18h36v18h180v8H500z"/><rect y="150" width="1440" height="20" fill="#CFE5F7"/></svg><img data-src="images/areas/${a.slug}.jpg" alt=""></div>`;
+  const miniCard = a => `<li><a href="area/${a.slug}.html" data-slug="${a.slug}"><div class="thumb" style="--g1:#EAF4FC;--g2:#A9D0F0">${MINI_SKY}<img data-src="images/areas/${a.slug}.jpg" alt=""></div><div class="acard"><h3>${esc(a.name)}</h3><p>${esc(a.short)}</p><span class="atags">${a.tags.map(t => `<span>${LBL[t]}</span>`).join("")}</span></div>${icon("arrow")}</a></li>`;
+  const render = a => {
+    const similar = AREAS.filter(x => x.slug !== a.slug && x.tags.some(t => a.tags.includes(t))).slice(0, 3);
+    return `
+    <section class="ap-hero"><div class="wrap">
+      <button type="button" class="ap-back" data-close>${icon("back")} Area guide</button>
+      <h1 id="ap-title" tabindex="-1">${esc(a.name)}</h1>
+      <p class="ap-short">${esc(a.short)}.</p>
+      <div class="ap-meta">${a.tags.map(t => `<span>${LBL[t]}</span>`).join("")}${a.dev ? `<span>Master developer: ${esc(a.dev)}</span>` : ""}</div>
+    </div>${heroArt(a)}</section>
+    <div class="ap-body"><div class="wrap grid">
+      <div class="ap-main">
+        <section class="ap-sec"><h2>Living in ${esc(a.name.split(" (")[0])}</h2><p>${esc(a.overview)}</p></section>
+        <section class="ap-sec ap-facts">
+          <div><h3>Property types</h3><p>${esc(a.types)}</p></div>
+          <div><h3>Best for</h3><p>${esc(a.bestfor)}</p></div>
+        </section>
+        <section class="ap-sec"><h2>Highlights</h2><ul class="ticks">${a.highlights.map(h => `<li>${icon("check")}<span>${esc(h)}</span></li>`).join("")}</ul></section>
+        <section class="ap-sec"><h2>Getting around</h2><p>${esc(a.access)}</p></section>
+      </div>
+      <aside class="ap-aside"><div class="ap-cta">
+        <h2>Thinking about ${esc(a.name.split(" (")[0])}?</h2>
+        <p>An advisor will send you recent sale prices, current rents and what's available now.</p>
+        <a href="#contact" class="btn btn-sun" data-ask="${esc(a.name)}">Ask about ${esc(a.name.split(" (")[0])}</a>
+        <a href="https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent("Hello Solara Bay, I'm interested in " + a.name + ".")}" target="_blank" rel="noopener" class="btn btn-bay">${icon("chat")} Chat on WhatsApp</a>
+        <p class="ap-note">Replies within one working hour, Monday to Saturday.</p>
+      </div></aside>
+    </div>
+    <div class="wrap">
+      <div class="ap-more"><h2>Similar communities</h2><ul class="areas-list">${similar.map(miniCard).join("")}</ul></div>
+      <p class="ap-disclaimer">This guide gives general information, last reviewed in September 2026. Prices, availability and project details change, so ask an advisor for current figures before making a decision.</p>
+    </div></div>`;
+  };
+  let lastFocus = null;
+  const openArea = slug => {
+    const a = bySlug[slug]; if (!a) return;
+    if (view.hidden) lastFocus = document.activeElement;
+    inner.innerHTML = render(a);
+    $$("img[data-src]", inner).forEach(img => { img.addEventListener("load", () => img.classList.add("is-loaded"), { once: true }); img.addEventListener("error", () => img.remove(), { once: true }); img.src = img.dataset.src; });
+    view.hidden = false; view.scrollTop = 0; document.body.classList.add("page-open");
+    ["#main", "footer", "#actionbar", "#wa"].forEach(s => { const el = $(s); if (el) el.inert = true; });
+    header.classList.remove("is-hidden");
+    document.title = a.name + " area guide | Solara Bay Real Estate";
+    $("#ap-title").focus({ preventScroll: true });
+  };
+  const closeArea = () => {
+    if (view.hidden) return;
+    view.hidden = true; document.body.classList.remove("page-open");
+    ["#main", "footer", "#actionbar", "#wa"].forEach(s => { const el = $(s); if (el) el.inert = false; });
+    document.title = baseTitle; lastFocus?.focus?.({ preventScroll: true });
+  };
+  const baseTitle = document.title;
+  const route = () => {
+    const m = location.hash.match(/^#area\/([a-z0-9-]+)$/);
+    if (m) openArea(m[1]); else closeArea();
+  };
+  document.addEventListener("click", e => {
+    const link = e.target.closest("a[data-slug]");
+    if (link) { e.preventDefault(); if (location.hash !== "#area/" + link.dataset.slug) location.hash = "area/" + link.dataset.slug; else openArea(link.dataset.slug); return; }
+    if (e.target.closest("[data-close]")) { e.preventDefault(); history.length > 1 && /^#area\//.test(location.hash) ? history.back() : (location.hash = "area-guide"); return; }
+    const ask = e.target.closest("a[data-ask]");
+    if (ask) {
+      e.preventDefault();
+      const note = $("#f-msg"); note.value = "I'm interested in " + ask.dataset.ask + ". ";
+      history.replaceState(null, "", "#contact"); closeArea();
+      requestAnimationFrame(() => { $("#contact").scrollIntoView({ behavior: "auto" }); $("#f-name").focus({ preventScroll: true }); });
+    }
+    // header links while a community page is open: close it first
+    const navLink = e.target.closest(".header a[href^='#'], .drawer a[href^='#']");
+    if (navLink && !view.hidden) closeArea();
+  });
+  addEventListener("hashchange", route);
+  addEventListener("keydown", e => { if (e.key === "Escape" && !view.hidden) $("[data-close]", view)?.click(); });
+  route();
+  const qArea = new URLSearchParams(location.search).get("area");
+  if (qArea && bySlug) { const n = $("#f-msg"); if (n && !n.value) n.value = "I'm interested in " + qArea.slice(0, 80) + ". "; }
+
+  // Service and community links prefill the form, so visitors never retype context
+  const note = $("#f-msg"), intent = $("#f-intent");
+  $$("[data-intent]").forEach(a => a.addEventListener("click", () => { intent.value = a.dataset.intent; }));
+  $$("[data-area]").forEach(a => a.addEventListener("click", () => {
+    const area = a.dataset.area;
+    if (!note.value.trim()) note.value = area === "another area" ? "I'm interested in: " : "I'm interested in " + area + ". ";
+  }));
+
+  // Safety net: if anything stops the observer, never leave content invisible
+  setTimeout(() => $$("[data-reveal]:not(.is-in)").forEach(el => { if (el.getBoundingClientRect().top < innerHeight) el.classList.add("is-in"); }), 2500);
+
+  $("#yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
